@@ -51,6 +51,7 @@ const brands = [
     description: "Brand strategy, web design, and creative development for modern businesses.",
     descriptionCn: "為現代企業提供品牌策略、網站設計與創意開發服務。",
     logo: blulumaLogo,
+    url: "https://www.bluluma.com",
   },
 ];
 
@@ -132,18 +133,20 @@ const Portfolio = () => {
                 {t("Group Brands", "集團品牌")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {brands.map((brand) => (
+              {brands.map((brand) => (
                   <div
                     key={brand.name}
-                    className="p-8 bg-card border border-border hover:border-secondary/20 transition-colors"
+                    className="p-8 bg-card border border-border hover:border-secondary/20 transition-colors flex flex-col"
                   >
                     <div className="h-24 mb-6 flex items-center">
                       {brand.logo ? (
-                        <img
-                          src={brand.logo}
-                          alt={brand.name}
-                          className="h-20 w-auto object-contain"
-                        />
+                        brand.url ? (
+                          <a href={brand.url} target="_blank" rel="noopener noreferrer">
+                            <img src={brand.logo} alt={brand.name} className="h-20 w-auto object-contain" />
+                          </a>
+                        ) : (
+                          <img src={brand.logo} alt={brand.name} className="h-20 w-auto object-contain" />
+                        )
                       ) : (
                         <div className="h-20 w-20 border border-border flex items-center justify-center">
                           <span className="text-secondary text-2xl font-display font-semibold">
@@ -155,9 +158,14 @@ const Portfolio = () => {
                     <h3 className="font-display text-lg font-semibold text-primary mb-3">
                       {lang === "en" ? brand.name : brand.nameCn}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-body">
+                    <p className="text-sm text-muted-foreground leading-relaxed font-body flex-1">
                       {lang === "en" ? brand.description : brand.descriptionCn}
                     </p>
+                    {brand.url && (
+                      <a href={brand.url} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-secondary text-sm font-body tracking-wide hover:underline">
+                        {brand.url.replace("https://www.", "")} →
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
