@@ -36,7 +36,8 @@ const Impact = () => {
       <Header />
       <main>
         <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="absolute inset-0 bg-primary/85" />
           <div className="section-container relative z-10">
             <div className="gold-line mb-6" />
             <p className="label-uppercase mb-4">{t("Impact / ESG", "社會影響力")}</p>

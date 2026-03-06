@@ -38,13 +38,6 @@ const brands = [
     logo: null,
   },
   {
-    name: "Hsin Hsin Shop",
-    nameCn: "欣欣複合式商店",
-    description: "A curated lifestyle and food marketplace connecting local producers and community commerce.",
-    descriptionCn: "連結在地生產者與社區商業的嚴選生活與食品市集。",
-    logo: null,
-  },
-  {
     name: "Bluluma Design",
     nameCn: "Bluluma 設計工作室",
     description: "Brand strategy, web design, and creative development for modern businesses.",
@@ -80,7 +73,8 @@ const SubsidiaryDetail = () => {
       <Header />
       <main>
         <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="absolute inset-0 bg-primary/85" />
           <div className="section-container relative z-10">
             <Link to="/portfolio" className="text-primary-foreground/40 hover:text-secondary text-xs font-body tracking-wide mb-6 inline-block transition-colors">
               {t("← Portfolio", "← 旗下事業")}

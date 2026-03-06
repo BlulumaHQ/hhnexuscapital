@@ -12,7 +12,7 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-primary/85" />
+      <div className="absolute inset-0 bg-primary/45" />
 
       <div className="section-container w-full relative z-10">
         <div className="max-w-3xl">
