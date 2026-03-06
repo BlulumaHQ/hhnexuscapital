@@ -30,9 +30,9 @@ const ContactSection = () => {
                 {t("Email", "電子信箱")}
               </p>
               <div className="space-y-1">
-                <p className="text-primary-foreground text-base font-body">info@</p>
-                <p className="text-primary-foreground text-base font-body">partners@</p>
-                <p className="text-primary-foreground text-base font-body">media@</p>
+                <p className="text-primary-foreground text-base font-body">info@hhnexuscapital.com</p>
+                <p className="text-primary-foreground text-base font-body">partners@hhnexuscapital.com</p>
+                <p className="text-primary-foreground text-base font-body">media@hhnexuscapital.com</p>
               </div>
             </div>
           </div>

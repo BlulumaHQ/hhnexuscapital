@@ -6,13 +6,13 @@
 
 @layer base {
   :root {
-    /* Midnight Navy #0F1C2E */
-    --primary: 213 52% 12%;
+    /* Deep Navy #0e2947 */
+    --primary: 212 67% 17%;
     --primary-foreground: 40 45% 95%;
 
     /* Imperial Gold #C6A85B */
     --secondary: 40 45% 57%;
-    --secondary-foreground: 213 52% 12%;
+    --secondary-foreground: 212 67% 17%;
 
     /* Pearl White #F5F5F5 */
     --background: 0 0% 96%;
@@ -29,7 +29,7 @@
     --popover-foreground: 0 0% 17%;
 
     --accent: 40 45% 57%;
-    --accent-foreground: 213 52% 12%;
+    --accent-foreground: 212 67% 17%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -42,7 +42,7 @@
 
     /* Custom tokens */
     --gold: 40 45% 57%;
-    --navy: 213 52% 12%;
+    --navy: 212 67% 17%;
     --graphite: 0 0% 17%;
 
     --font-display: 'Cormorant Garamond', Georgia, serif;

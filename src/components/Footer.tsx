@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
+import logo from "@/assets/logo.svg";
 
 const navEn = [
   { label: "About", href: "/about" },
@@ -31,6 +32,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12">
           {/* Tagline */}
           <div>
+            <img src={logo} alt="HH Nexus Capital" className="h-14 w-auto mb-5 brightness-0 invert" />
             <p className="font-display text-lg md:text-xl text-primary-foreground font-semibold mb-1">
               {t("HH Nexus Capital Ltd.", "衡寰資本有限公司")}
             </p>
@@ -67,9 +69,9 @@ const Footer = () => {
             </p>
             <div className="space-y-2">
               <p className="text-primary-foreground/60 text-sm font-body">Vancouver, BC, Canada</p>
-              <p className="text-primary-foreground/60 text-sm font-body">info@</p>
-              <p className="text-primary-foreground/60 text-sm font-body">partners@</p>
-              <p className="text-primary-foreground/60 text-sm font-body">media@</p>
+              <p className="text-primary-foreground/60 text-sm font-body">info@hhnexuscapital.com</p>
+              <p className="text-primary-foreground/60 text-sm font-body">partners@hhnexuscapital.com</p>
+              <p className="text-primary-foreground/60 text-sm font-body">media@hhnexuscapital.com</p>
             </div>
           </div>
         </div>

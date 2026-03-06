@@ -1,11 +1,20 @@
 import { useLanguage } from "@/context/LanguageContext";
+import heroImage from "@/assets/hero-skyline.jpg";
 
 const HeroSection = () => {
   const { lang, t } = useLanguage();
 
   return (
-    <section className="relative bg-primary min-h-[85vh] flex items-center pt-20">
-      <div className="section-container w-full">
+    <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-primary/85" />
+
+      <div className="section-container w-full relative z-10">
         <div className="max-w-3xl">
           <div className="gold-line mb-8" />
           <p className="font-display text-xl md:text-2xl text-primary-foreground font-semibold tracking-wide mb-2">
@@ -54,7 +63,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };
