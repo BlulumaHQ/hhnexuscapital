@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
+import heroImage from "@/assets/hero-skyline.jpg";
 
 const platformData: Record<string, {
   name: string;
@@ -103,8 +104,9 @@ const PlatformDetail = () => {
     <>
       <Header />
       <main>
-        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
-          <div className="section-container">
+        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="section-container relative z-10">
             <Link to="/platforms" className="text-primary-foreground/40 hover:text-secondary text-xs font-body tracking-wide mb-6 inline-block transition-colors">
               {t("← All Platforms", "← 所有平台")}
             </Link>

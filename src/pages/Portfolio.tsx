@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
-import portfolioImage from "@/assets/portfolio-framing.jpg";
+import heroImage from "@/assets/hero-skyline.jpg";
 import hsinhsinLogo from "@/assets/brands/hsinhsin_logo.jpg";
 import hsinFramingLogo from "@/assets/brands/hsin_framing_logo.jpg";
 import cambridgeArtLogo from "@/assets/brands/cambridge_art_logo.jpg";
@@ -63,8 +63,8 @@ const Portfolio = () => {
       <main>
         <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-15"
-            style={{ backgroundImage: `url(${portfolioImage})` }}
+            className="absolute inset-0 bg-cover bg-center opacity-20"
+            style={{ backgroundImage: `url(${heroImage})` }}
           />
           <div className="section-container relative z-10">
             <div className="gold-line mb-6" />
@@ -137,16 +137,16 @@ const Portfolio = () => {
                     key={brand.name}
                     className="p-8 bg-card border border-border hover:border-secondary/20 transition-colors"
                   >
-                    <div className="h-16 mb-6 flex items-center">
+                    <div className="h-24 mb-6 flex items-center">
                       {brand.logo ? (
                         <img
                           src={brand.logo}
                           alt={brand.name}
-                          className="h-14 w-auto object-contain"
+                          className="h-20 w-auto object-contain"
                         />
                       ) : (
-                        <div className="h-14 w-14 border border-border flex items-center justify-center">
-                          <span className="text-secondary text-lg font-display font-semibold">
+                        <div className="h-20 w-20 border border-border flex items-center justify-center">
+                          <span className="text-secondary text-2xl font-display font-semibold">
                             {brand.name.charAt(0)}
                           </span>
                         </div>

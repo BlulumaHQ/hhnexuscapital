@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12">
           {/* Tagline */}
           <div>
-            <img src={logo} alt="HH Nexus Capital" className="h-14 w-auto mb-5 brightness-0 invert" />
+            <img src={logo} alt="HH Nexus Capital" className="h-16 w-auto mb-5" />
             <p className="font-display text-lg md:text-xl text-primary-foreground font-semibold mb-1">
               {t("HH Nexus Capital Ltd.", "衡寰資本有限公司")}
             </p>
