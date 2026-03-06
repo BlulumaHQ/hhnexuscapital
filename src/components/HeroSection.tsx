@@ -3,6 +3,9 @@ const HeroSection = () => (
     <div className="section-container w-full">
       <div className="max-w-3xl">
         <div className="gold-line mb-8" />
+        <p className="font-display text-xl md:text-2xl text-primary-foreground font-semibold tracking-wide mb-2">
+          HH Nexus Holdings Ltd.
+        </p>
         <p className="label-uppercase mb-6">Urban Strategic Platform Group</p>
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-primary-foreground leading-[1.1] tracking-tight mb-8">
           Where Capital Meets
