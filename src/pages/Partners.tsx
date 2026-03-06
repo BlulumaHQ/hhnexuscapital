@@ -3,10 +3,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const partnerCategories = [
-  { name: "Government & Public Sector", partners: ["TBD"] },
-  { name: "Private Capital", partners: ["TBD"] },
-  { name: "Advisory Networks", partners: ["TBD"] },
-  { name: "Academic Institutions", partners: ["TBD"] },
+  { name: "Government & City Collaboration", partners: ["TBD"] },
+  { name: "Corporate Partnerships", partners: ["TBD"] },
+  { name: "Cultural & Community Partners", partners: ["TBD"] },
+  { name: "Advisors & Experts", partners: ["TBD"] },
 ];
 
 const Partners = () => (
@@ -20,9 +20,6 @@ const Partners = () => (
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
             Institutional <span className="text-secondary">Partnerships</span>
           </h1>
-          <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-            HH Nexus Holdings maintains strategic alliances with institutional partners across government, private sector, and advisory networks in British Columbia and beyond.
-          </p>
         </div>
       </section>
 

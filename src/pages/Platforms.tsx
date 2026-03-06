@@ -6,32 +6,37 @@ const platforms = [
   {
     slug: "urban-strategic-forum",
     name: "Urban Strategic Forum Platform",
-    category: "City-Level Strategy",
-    description: "Convening government, capital, and community leaders to shape long-term urban development agendas.",
+    nameCn: "城市戰略論壇平台",
+    description: "Policy roundtables, leadership summits, and institutional dialogue platforms connecting governments, corporations, and civic leadership.",
+    descriptionCn: "政策圓桌、領袖峰會與制度化政商對話平台，連結政府、企業與城市領袖。",
   },
   {
     slug: "public-private-advisory",
     name: "Public-Private Strategy & Advisory",
-    category: "Governance & Policy",
-    description: "Bridging institutional governance and private sector execution through structured advisory frameworks.",
+    nameCn: "公私合作策略顧問",
+    description: "Strategic advisory services helping organizations navigate public-private collaboration, government relations, and urban positioning.",
+    descriptionCn: "協助機構在公私合作、政府協作與城市定位中建立可落地的策略架構。",
   },
   {
     slug: "cultural-ip",
     name: "International Cultural IP Platform",
-    category: "Cultural Development",
-    description: "Developing and licensing cultural intellectual property across international markets and urban centres.",
+    nameCn: "國際文化 IP 平台",
+    description: "Developing scalable cultural programming, festivals, and international exchange initiatives designed for long-term licensing and replication.",
+    descriptionCn: "把文化內容從活動升級為可複製、可授權的 IP 資產。",
   },
   {
     slug: "nexus-global-forum",
     name: "Nexus Global Forum",
-    category: "International Convening",
-    description: "A premier convening platform connecting global leaders across capital, policy, and cultural sectors.",
+    nameCn: "Nexus 全球論壇",
+    description: "A flagship global forum brand designed for multi-city expansion, institutional dialogue, and strategic partnership development.",
+    descriptionCn: "以授權與跨城市複製為核心的旗艦論壇品牌。",
   },
   {
     slug: "industry-capital",
     name: "Industry & Capital Connection Platform",
-    category: "Capital Integration",
-    description: "Facilitating strategic connections between industry operators and institutional capital partners.",
+    nameCn: "產業與資本連結平台",
+    description: "Alliance building and strategic matchmaking between industries, investors, and institutional partners.",
+    descriptionCn: "建立產業聯盟與資本媒合機制，促進長期策略合作。",
   },
 ];
 
@@ -46,9 +51,6 @@ const Platforms = () => (
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
             Urban Influence <span className="text-secondary">Platforms</span>
           </h1>
-          <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-            Each platform integrates capital, policy collaboration, and cultural IP development to structure long-term city-level influence.
-          </p>
         </div>
       </section>
 
@@ -61,11 +63,12 @@ const Platforms = () => (
                 to={`/platforms/${p.slug}`}
                 className="block border border-border p-8 md:p-12 hover:border-secondary/40 transition-colors group bg-card"
               >
-                <p className="label-uppercase mb-4">{p.category}</p>
-                <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-4 group-hover:text-secondary transition-colors">
+                <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-1 group-hover:text-secondary transition-colors">
                   {p.name}
                 </h2>
-                <p className="body-large max-w-2xl">{p.description}</p>
+                <p className="text-secondary/70 text-sm font-display mb-4">{p.nameCn}</p>
+                <p className="body-large max-w-2xl mb-3">{p.description}</p>
+                <p className="text-muted-foreground text-sm max-w-2xl font-body">{p.descriptionCn}</p>
                 <span className="inline-block mt-6 text-secondary text-sm font-body tracking-wide">
                   View Platform →
                 </span>

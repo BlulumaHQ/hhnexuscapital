@@ -9,9 +9,9 @@ const Footer = () => (
           <p className="font-display text-lg md:text-xl text-primary-foreground font-semibold mb-1">
             HH Nexus Holdings Ltd.
           </p>
-          <p className="font-display text-sm text-secondary mb-3">衡寰國際控股有限公司</p>
+          <p className="font-display text-sm text-secondary mb-3">Urban Strategic Platform Group</p>
           <p className="text-primary-foreground/50 text-sm leading-relaxed font-body">
-            Where Capital Meets Governance and Culture. Structuring long-term urban influence platforms across British Columbia and beyond.
+            Where Capital Meets Governance and Culture.
           </p>
         </div>
 
@@ -43,7 +43,10 @@ const Footer = () => (
         <div>
           <p className="text-primary-foreground/40 text-xs tracking-[0.15em] uppercase mb-4 font-body">Contact</p>
           <div className="space-y-2">
-            <p className="text-primary-foreground/60 text-sm font-body">Vancouver, British Columbia, Canada</p>
+            <p className="text-primary-foreground/60 text-sm font-body">Vancouver, BC, Canada</p>
+            <p className="text-primary-foreground/60 text-sm font-body">info@</p>
+            <p className="text-primary-foreground/60 text-sm font-body">partners@</p>
+            <p className="text-primary-foreground/60 text-sm font-body">media@</p>
           </div>
         </div>
       </div>

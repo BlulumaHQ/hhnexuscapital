@@ -14,21 +14,34 @@ const HeroSection = () => (
         <p className="text-primary-foreground/60 text-base md:text-lg max-w-xl leading-relaxed mb-3">
           Structuring Long-Term Urban Influence Platforms.
         </p>
-        <p className="text-secondary/80 text-base md:text-lg max-w-xl leading-relaxed mb-10 font-display">
-          資本 × 政策 × 文化的城市樞紐
-        </p>
+
+        <div className="mt-8 mb-10">
+          <p className="font-display text-lg md:text-xl text-secondary/90 mb-1">
+            衡寰國際控股有限公司
+          </p>
+          <p className="text-primary-foreground/50 text-sm md:text-base font-body mb-1">
+            城市級戰略平台型控股集團
+          </p>
+          <p className="text-secondary/80 text-base md:text-lg max-w-xl leading-relaxed font-display">
+            資本 × 政策 × 文化的城市樞紐
+          </p>
+          <p className="text-primary-foreground/50 text-sm md:text-base max-w-xl leading-relaxed font-body">
+            以制度化平台，構建長期城市影響力
+          </p>
+        </div>
+
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="#about"
+            href="#contact"
             className="inline-flex items-center justify-center px-8 py-3.5 bg-secondary text-secondary-foreground text-sm font-medium tracking-wide hover:bg-secondary/90 transition-colors"
           >
-            Learn More
+            Become a Partner
           </a>
           <a
-            href="#contact"
+            href="#about"
             className="inline-flex items-center justify-center px-8 py-3.5 border border-primary-foreground/20 text-primary-foreground/80 text-sm font-medium tracking-wide hover:border-secondary hover:text-secondary transition-colors"
           >
-            Become a Partner
+            Download Company Profile
           </a>
         </div>
       </div>
