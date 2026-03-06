@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/context/LanguageContext";
 
 const platforms = [
   {
@@ -38,42 +39,42 @@ const platforms = [
   },
 ];
 
-const PlatformsSection = () => (
-  <section id="platforms" className="section-padding bg-primary">
-    <div className="section-container">
-      <div className="max-w-2xl mb-16">
-        <div className="gold-line mb-6" />
-        <p className="label-uppercase mb-4">Five Strategic Platforms</p>
-        <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground tracking-tight mb-6">
-          Urban Influence Through Structured Platforms
-        </h2>
-      </div>
+const PlatformsSection = () => {
+  const { lang, t } = useLanguage();
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {platforms.map((p) => (
-          <Link
-            key={p.slug}
-            to={`/platforms/${p.slug}`}
-            className="border border-primary-foreground/10 p-8 md:p-10 hover:border-secondary/40 transition-colors group block"
-          >
-            <h3 className="font-display text-xl font-semibold text-primary-foreground mb-1 group-hover:text-secondary transition-colors">
-              {p.name}
-            </h3>
-            <p className="text-secondary/70 text-sm font-display mb-4">{p.nameCn}</p>
-            <p className="text-primary-foreground/50 text-sm leading-relaxed mb-3">
-              {p.description}
-            </p>
-            <p className="text-primary-foreground/30 text-xs leading-relaxed font-body">
-              {p.descriptionCn}
-            </p>
-            <span className="inline-block mt-6 text-secondary text-sm font-body tracking-wide">
-              View Platform →
-            </span>
-          </Link>
-        ))}
+  return (
+    <section id="platforms" className="section-padding bg-primary">
+      <div className="section-container">
+        <div className="max-w-2xl mb-16">
+          <div className="gold-line mb-6" />
+          <p className="label-uppercase mb-4">{t("Five Strategic Platforms", "五大戰略平台")}</p>
+          <h2 className="font-display text-3xl md:text-4xl font-semibold text-primary-foreground tracking-tight mb-6">
+            {t("Urban Influence Through Structured Platforms", "以結構化平台構建城市影響力")}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {platforms.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/platforms/${p.slug}`}
+              className="border border-primary-foreground/10 p-8 md:p-10 hover:border-secondary/40 transition-colors group block"
+            >
+              <h3 className="font-display text-xl font-semibold text-primary-foreground mb-4 group-hover:text-secondary transition-colors">
+                {lang === "en" ? p.name : p.nameCn}
+              </h3>
+              <p className="text-primary-foreground/50 text-sm leading-relaxed mb-6">
+                {lang === "en" ? p.description : p.descriptionCn}
+              </p>
+              <span className="inline-block text-secondary text-sm font-body tracking-wide">
+                {t("View Platform →", "查看平台 →")}
+              </span>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default PlatformsSection;

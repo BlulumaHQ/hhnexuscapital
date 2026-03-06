@@ -1,21 +1,28 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/context/LanguageContext";
 
-const categories = ["All", "Press Releases", "Case Studies", "Reports", "Perspectives"] as const;
-type Category = typeof categories[number];
+const categoriesEn = ["All", "Press Releases", "Case Studies", "Reports", "Perspectives"] as const;
+const categoriesZh = ["全部", "新聞稿", "案例研究", "報告", "觀點"] as const;
+
+type Category = string;
 
 const insightItems = [
-  { title: "TBD", category: "Press Releases" as const, date: "TBD", excerpt: "TBD" },
-  { title: "TBD", category: "Case Studies" as const, date: "TBD", excerpt: "TBD" },
-  { title: "TBD", category: "Reports" as const, date: "TBD", excerpt: "TBD" },
-  { title: "TBD", category: "Perspectives" as const, date: "TBD", excerpt: "TBD" },
+  { title: "TBD", titleCn: "待定", category: "Press Releases", categoryCn: "新聞稿", date: "TBD", excerpt: "TBD", excerptCn: "待定" },
+  { title: "TBD", titleCn: "待定", category: "Case Studies", categoryCn: "案例研究", date: "TBD", excerpt: "TBD", excerptCn: "待定" },
+  { title: "TBD", titleCn: "待定", category: "Reports", categoryCn: "報告", date: "TBD", excerpt: "TBD", excerptCn: "待定" },
+  { title: "TBD", titleCn: "待定", category: "Perspectives", categoryCn: "觀點", date: "TBD", excerpt: "TBD", excerptCn: "待定" },
 ];
 
 const Insights = () => {
-  const [active, setActive] = useState<Category>("All");
+  const { lang, t } = useLanguage();
+  const categories = lang === "en" ? categoriesEn : categoriesZh;
+  const [active, setActive] = useState<Category>(categories[0]);
 
-  const filtered = active === "All" ? insightItems : insightItems.filter((i) => i.category === active);
+  const filtered = active === categories[0]
+    ? insightItems
+    : insightItems.filter((i) => (lang === "en" ? i.category : i.categoryCn) === active);
 
   return (
     <>
@@ -24,9 +31,13 @@ const Insights = () => {
         <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
           <div className="section-container">
             <div className="gold-line mb-6" />
-            <p className="label-uppercase mb-4">Insights</p>
+            <p className="label-uppercase mb-4">{t("Insights", "洞察觀點")}</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
-              Perspectives & <span className="text-secondary">Intelligence</span>
+              {lang === "en" ? (
+                <>Perspectives & <span className="text-secondary">Intelligence</span></>
+              ) : (
+                <>觀點與<span className="text-secondary">洞察</span></>
+              )}
             </h1>
           </div>
         </section>
@@ -55,11 +66,17 @@ const Insights = () => {
               {filtered.map((item, i) => (
                 <article key={i} className="p-8 bg-card border border-border hover:border-secondary/30 transition-colors">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                    <span className="text-xs text-secondary tracking-[0.15em] uppercase font-body">{item.category}</span>
+                    <span className="text-xs text-secondary tracking-[0.15em] uppercase font-body">
+                      {lang === "en" ? item.category : item.categoryCn}
+                    </span>
                     <span className="text-xs text-muted-foreground font-body">{item.date}</span>
                   </div>
-                  <h2 className="font-display text-xl md:text-2xl font-semibold text-primary mb-3">{item.title}</h2>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.excerpt}</p>
+                  <h2 className="font-display text-xl md:text-2xl font-semibold text-primary mb-3">
+                    {lang === "en" ? item.title : item.titleCn}
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {lang === "en" ? item.excerpt : item.excerptCn}
+                  </p>
                 </article>
               ))}
             </div>
