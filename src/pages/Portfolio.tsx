@@ -137,16 +137,16 @@ const Portfolio = () => {
                     key={brand.name}
                     className="p-8 bg-card border border-border hover:border-secondary/20 transition-colors"
                   >
-                    <div className="h-16 mb-6 flex items-center">
+                    <div className="h-24 mb-6 flex items-center">
                       {brand.logo ? (
                         <img
                           src={brand.logo}
                           alt={brand.name}
-                          className="h-14 w-auto object-contain"
+                          className="h-20 w-auto object-contain"
                         />
                       ) : (
-                        <div className="h-14 w-14 border border-border flex items-center justify-center">
-                          <span className="text-secondary text-lg font-display font-semibold">
+                        <div className="h-20 w-20 border border-border flex items-center justify-center">
+                          <span className="text-secondary text-2xl font-display font-semibold">
                             {brand.name.charAt(0)}
                           </span>
                         </div>

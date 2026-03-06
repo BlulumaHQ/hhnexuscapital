@@ -35,9 +35,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/5">
-      <div className="section-container flex items-center justify-between h-18 md:h-22">
+      <div className="section-container flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="HH Nexus Capital" className="h-14 md:h-16 w-auto" />
+          <img src={logo} alt="HH Nexus Capital" className="h-16 md:h-20 w-auto" />
         </Link>
 
         {/* Desktop Nav */}

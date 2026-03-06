@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
+import heroImage from "@/assets/hero-skyline.jpg";
 import hsinFramingLogo from "@/assets/brands/hsin_framing_logo.jpg";
 import cambridgeArtLogo from "@/assets/brands/cambridge_art_logo.jpg";
 import hsinEventLogo from "@/assets/brands/hsin_hsin_event_logo.jpg";
@@ -77,8 +78,9 @@ const SubsidiaryDetail = () => {
     <>
       <Header />
       <main>
-        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
-          <div className="section-container">
+        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="section-container relative z-10">
             <Link to="/portfolio" className="text-primary-foreground/40 hover:text-secondary text-xs font-body tracking-wide mb-6 inline-block transition-colors">
               {t("← Portfolio", "← 旗下事業")}
             </Link>
@@ -119,16 +121,16 @@ const SubsidiaryDetail = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {brands.map((brand) => (
                 <div key={brand.name} className="p-8 border border-border bg-card hover:border-secondary/20 transition-colors">
-                  <div className="h-16 mb-6 flex items-center">
+                  <div className="h-24 mb-6 flex items-center">
                     {brand.logo ? (
                       <img
                         src={brand.logo}
                         alt={brand.name}
-                        className="h-14 w-auto object-contain"
+                        className="h-20 w-auto object-contain"
                       />
                     ) : (
-                      <div className="h-14 w-14 border border-border flex items-center justify-center">
-                        <span className="text-secondary text-lg font-display font-semibold">
+                      <div className="h-20 w-20 border border-border flex items-center justify-center">
+                        <span className="text-secondary text-2xl font-display font-semibold">
                           {brand.name.charAt(0)}
                         </span>
                       </div>

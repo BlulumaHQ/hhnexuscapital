@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/context/LanguageContext";
+import heroImage from "@/assets/hero-skyline.jpg";
 
 const partnershipTypesEn = [
   "Strategic Investment",
@@ -52,8 +53,9 @@ const Contact = () => {
     <>
       <Header />
       <main>
-        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
-          <div className="section-container">
+        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${heroImage})` }} />
+          <div className="section-container relative z-10">
             <div className="gold-line mb-6" />
             <p className="label-uppercase mb-4">{t("Contact", "聯絡我們")}</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
