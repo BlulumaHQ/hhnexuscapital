@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
+import platformImage from "@/assets/platform-conference.jpg";
 
 const platforms = [
   {
@@ -48,8 +49,12 @@ const Platforms = () => {
     <>
       <Header />
       <main>
-        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
-          <div className="section-container">
+        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-15"
+            style={{ backgroundImage: `url(${platformImage})` }}
+          />
+          <div className="section-container relative z-10">
             <div className="gold-line mb-6" />
             <p className="label-uppercase mb-4">{t("Five Strategic Platforms", "五大戰略平台")}</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
