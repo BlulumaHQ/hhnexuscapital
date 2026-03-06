@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/context/LanguageContext";
 
 const brands = [
   {
@@ -41,107 +42,126 @@ const brands = [
   },
 ];
 
-const Portfolio = () => (
-  <>
-    <Header />
-    <main>
-      <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
-        <div className="section-container">
-          <div className="gold-line mb-6" />
-          <p className="label-uppercase mb-4">Portfolio / Subsidiaries</p>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
-            Strategic Investments & <span className="text-secondary">Holdings</span>
-          </h1>
-          <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-            Our holding structure connects strategic platforms with operating assets.
-          </p>
-          <p className="text-primary-foreground/40 text-sm leading-relaxed mt-3 max-w-2xl font-body">
-            我們以控股架構串聯平台型業務與營運型資產群。
-          </p>
-        </div>
-      </section>
+const Portfolio = () => {
+  const { lang, t } = useLanguage();
 
-      {/* Operating Assets */}
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <div className="mb-16">
-            <div className="gold-line mb-4" />
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">Operating Assets</h2>
-            <div className="grid grid-cols-1 gap-6">
-              <Link
-                to="/portfolio/hsin-hsin-holdings"
-                className="block p-8 md:p-12 bg-card border border-border hover:border-secondary/30 transition-colors group"
-              >
-                <p className="text-xs text-muted-foreground tracking-[0.15em] uppercase mb-3 font-body">Founded in Vancouver, 1995</p>
-                <h3 className="font-display text-2xl md:text-3xl font-semibold text-primary group-hover:text-secondary transition-colors mb-3">
-                  HSIN HSIN HOLDINGS LTD.
-                </h3>
-                <p className="body-large max-w-2xl mb-4">
-                  Founded in Vancouver in 1995, HSIN HSIN HOLDINGS LTD. is a diversified business group spanning art craftsmanship, education, retail lifestyle, branding and design, and coffee and tea experiences.
-                </p>
-                <p className="text-muted-foreground text-sm max-w-2xl mb-4 font-body">
-                  欣欣控股自 1995 年成立於溫哥華，事業涵蓋工藝美學與藝術裝裱、文化教育、生活選品零售、品牌設計與行銷整合，以及咖啡茶與健康食材體驗。
-                </p>
-                <p className="body-large max-w-2xl mb-2">
-                  The group connects products, services, and cultural programming into a practical ecosystem for sustainable growth.
-                </p>
-                <p className="text-muted-foreground text-sm max-w-2xl font-body">
-                  串聯商品、服務與文化內容，形成可持續成長的實務型生態系。
-                </p>
-                <span className="inline-block mt-6 text-secondary text-sm font-body tracking-wide">View Details →</span>
-              </Link>
-            </div>
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
+          <div className="section-container">
+            <div className="gold-line mb-6" />
+            <p className="label-uppercase mb-4">{t("Portfolio / Subsidiaries", "旗下事業")}</p>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
+              {lang === "en" ? (
+                <>Strategic Investments & <span className="text-secondary">Holdings</span></>
+              ) : (
+                <>策略性投資與<span className="text-secondary">控股事業</span></>
+              )}
+            </h1>
+            <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
+              {lang === "en"
+                ? "Our holding structure connects strategic platforms with operating assets."
+                : "我們以控股架構串聯平台型業務與營運型資產群。"}
+            </p>
           </div>
+        </section>
 
-          {/* Brands */}
-          <div className="mb-16">
-            <div className="gold-line mb-4" />
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">Brands</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {brands.map((brand) => (
-                <div
-                  key={brand.name}
-                  className="p-8 bg-card border border-border"
-                >
-                  <h3 className="font-display text-lg font-semibold text-primary mb-1">{brand.name}</h3>
-                  <p className="text-secondary/70 text-sm font-display mb-4">{brand.nameCn}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3 font-body">{brand.description}</p>
-                  <p className="text-xs text-muted-foreground/70 leading-relaxed font-body">{brand.descriptionCn}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Urban Platforms */}
-          <div>
-            <div className="gold-line mb-4" />
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">Urban Platforms</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { name: "Urban Strategic Forum Platform", slug: "urban-strategic-forum" },
-                { name: "Public-Private Strategy & Advisory", slug: "public-private-advisory" },
-                { name: "International Cultural IP Platform", slug: "cultural-ip" },
-                { name: "Nexus Global Forum", slug: "nexus-global-forum" },
-                { name: "Industry & Capital Connection Platform", slug: "industry-capital" },
-              ].map((item) => (
+        {/* Operating Assets */}
+        <section className="section-padding bg-background">
+          <div className="section-container">
+            <div className="mb-16">
+              <div className="gold-line mb-4" />
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
+                {t("Operating Assets", "營運資產")}
+              </h2>
+              <div className="grid grid-cols-1 gap-6">
                 <Link
-                  key={item.slug}
-                  to={`/platforms/${item.slug}`}
-                  className="block p-8 bg-card border border-border hover:border-secondary/30 transition-colors group"
+                  to="/portfolio/hsin-hsin-holdings"
+                  className="block p-8 md:p-12 bg-card border border-border hover:border-secondary/30 transition-colors group"
                 >
-                  <h3 className="font-display text-lg font-semibold text-primary group-hover:text-secondary transition-colors">
-                    {item.name}
+                  <p className="text-xs text-muted-foreground tracking-[0.15em] uppercase mb-3 font-body">
+                    {t("Founded in Vancouver, 1995", "創立於溫哥華，1995年")}
+                  </p>
+                  <h3 className="font-display text-2xl md:text-3xl font-semibold text-primary group-hover:text-secondary transition-colors mb-3">
+                    HSIN HSIN HOLDINGS LTD.
                   </h3>
-                  <span className="inline-block mt-4 text-secondary text-sm font-body tracking-wide">View Platform →</span>
+                  <p className="body-large max-w-2xl mb-4">
+                    {lang === "en"
+                      ? "Founded in Vancouver in 1995, HSIN HSIN HOLDINGS LTD. is a diversified business group spanning art craftsmanship, education, retail lifestyle, branding and design, and coffee and tea experiences."
+                      : "欣欣控股自 1995 年成立於溫哥華，事業涵蓋工藝美學與藝術裝裱、文化教育、生活選品零售、品牌設計與行銷整合，以及咖啡茶與健康食材體驗。"}
+                  </p>
+                  <p className="body-large max-w-2xl">
+                    {lang === "en"
+                      ? "The group connects products, services, and cultural programming into a practical ecosystem for sustainable growth."
+                      : "串聯商品、服務與文化內容，形成可持續成長的實務型生態系。"}
+                  </p>
+                  <span className="inline-block mt-6 text-secondary text-sm font-body tracking-wide">
+                    {t("View Details →", "查看詳情 →")}
+                  </span>
                 </Link>
-              ))}
+              </div>
+            </div>
+
+            {/* Brands */}
+            <div className="mb-16">
+              <div className="gold-line mb-4" />
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
+                {t("Brands", "品牌")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {brands.map((brand) => (
+                  <div
+                    key={brand.name}
+                    className="p-8 bg-card border border-border"
+                  >
+                    <h3 className="font-display text-lg font-semibold text-primary mb-4">
+                      {lang === "en" ? brand.name : brand.nameCn}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed font-body">
+                      {lang === "en" ? brand.description : brand.descriptionCn}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Urban Platforms */}
+            <div>
+              <div className="gold-line mb-4" />
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
+                {t("Urban Platforms", "城市平台")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { name: "Urban Strategic Forum Platform", nameCn: "城市戰略論壇平台", slug: "urban-strategic-forum" },
+                  { name: "Public-Private Strategy & Advisory", nameCn: "公私合作策略顧問", slug: "public-private-advisory" },
+                  { name: "International Cultural IP Platform", nameCn: "國際文化 IP 平台", slug: "cultural-ip" },
+                  { name: "Nexus Global Forum", nameCn: "Nexus 全球論壇", slug: "nexus-global-forum" },
+                  { name: "Industry & Capital Connection Platform", nameCn: "產業與資本連結平台", slug: "industry-capital" },
+                ].map((item) => (
+                  <Link
+                    key={item.slug}
+                    to={`/platforms/${item.slug}`}
+                    className="block p-8 bg-card border border-border hover:border-secondary/30 transition-colors group"
+                  >
+                    <h3 className="font-display text-lg font-semibold text-primary group-hover:text-secondary transition-colors">
+                      {lang === "en" ? item.name : item.nameCn}
+                    </h3>
+                    <span className="inline-block mt-4 text-secondary text-sm font-body tracking-wide">
+                      {t("View Platform →", "查看平台 →")}
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </>
-);
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default Portfolio;

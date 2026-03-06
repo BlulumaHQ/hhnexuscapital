@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.svg";
 import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const navItems = [
+const navItemsEn = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Platforms", href: "/platforms" },
@@ -14,16 +15,29 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
+const navItemsZh = [
+  { label: "首頁", href: "/" },
+  { label: "關於我們", href: "/about" },
+  { label: "平台架構", href: "/platforms" },
+  { label: "旗下事業", href: "/portfolio" },
+  { label: "社會影響力", href: "/impact" },
+  { label: "洞察觀點", href: "/insights" },
+  { label: "合作夥伴", href: "/partners" },
+  { label: "聯絡我們", href: "/contact" },
+];
+
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"EN" | "中文">("EN");
+  const { lang, setLang, t } = useLanguage();
   const location = useLocation();
+
+  const navItems = lang === "en" ? navItemsEn : navItemsZh;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-white/5">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="HH Nexus Holdings" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="HH Nexus Capital" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -46,17 +60,17 @@ const Header = () => {
         {/* Desktop Right */}
         <div className="hidden lg:flex items-center gap-4">
           <button
-            onClick={() => setLang(lang === "EN" ? "中文" : "EN")}
+            onClick={() => setLang(lang === "en" ? "zh" : "en")}
             className="flex items-center gap-1.5 text-primary-foreground/60 hover:text-primary-foreground text-xs font-body tracking-wide transition-colors"
           >
             <Globe size={14} />
-            {lang === "EN" ? "EN / 中文" : "中文 / EN"}
+            {lang === "en" ? "EN / 中文" : "中文 / EN"}
           </button>
           <Link
             to="/contact"
             className="inline-flex items-center justify-center px-6 py-2.5 bg-secondary text-secondary-foreground text-xs font-medium tracking-[0.1em] uppercase hover:bg-secondary/90 transition-colors font-body"
           >
-            Become a Partner
+            {t("Become a Partner", "合作洽談")}
           </Link>
         </div>
 
@@ -90,18 +104,18 @@ const Header = () => {
             ))}
             <div className="pt-4 border-t border-white/5 flex flex-col gap-3">
               <button
-                onClick={() => setLang(lang === "EN" ? "中文" : "EN")}
+                onClick={() => setLang(lang === "en" ? "zh" : "en")}
                 className="flex items-center gap-1.5 text-primary-foreground/60 text-xs font-body tracking-wide"
               >
                 <Globe size={14} />
-                {lang === "EN" ? "EN / 中文" : "中文 / EN"}
+                {lang === "en" ? "EN / 中文" : "中文 / EN"}
               </button>
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center px-6 py-2.5 bg-secondary text-secondary-foreground text-xs font-medium tracking-[0.1em] uppercase font-body"
               >
-                Become a Partner
+                {t("Become a Partner", "合作洽談")}
               </Link>
             </div>
           </div>

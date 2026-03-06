@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/context/LanguageContext";
 
 const pillars = [
   {
@@ -22,39 +23,48 @@ const pillars = [
   },
 ];
 
-const Impact = () => (
-  <>
-    <Header />
-    <main>
-      <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
-        <div className="section-container">
-          <div className="gold-line mb-6" />
-          <p className="label-uppercase mb-4">Impact / ESG</p>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
-            Building Platforms That Deliver <span className="text-secondary">Measurable Community Value</span>
-          </h1>
-          <p className="font-display text-lg text-primary-foreground/50 mt-4">社會影響力</p>
-        </div>
-      </section>
+const Impact = () => {
+  const { lang, t } = useLanguage();
 
-      <section className="section-padding bg-background">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pillars.map((pillar) => (
-              <div key={pillar.title} className="p-8 md:p-10 border border-border bg-card">
-                <div className="w-8 h-[2px] bg-secondary mb-6" />
-                <h2 className="font-display text-xl md:text-2xl font-semibold text-primary mb-2">{pillar.title}</h2>
-                <p className="text-secondary/70 text-sm font-display mb-4">{pillar.titleCn}</p>
-                <p className="body-large mb-4">{pillar.description}</p>
-                <p className="text-muted-foreground text-sm font-body">{pillar.descriptionCn}</p>
-              </div>
-            ))}
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
+          <div className="section-container">
+            <div className="gold-line mb-6" />
+            <p className="label-uppercase mb-4">{t("Impact / ESG", "社會影響力")}</p>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
+              {lang === "en" ? (
+                <>Building Platforms That Deliver <span className="text-secondary">Measurable Community Value</span></>
+              ) : (
+                <>打造能創造<span className="text-secondary">可衡量社區價值</span>的平台</>
+              )}
+            </h1>
           </div>
-        </div>
-      </section>
-    </main>
-    <Footer />
-  </>
-);
+        </section>
+
+        <section className="section-padding bg-background">
+          <div className="section-container">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {pillars.map((pillar) => (
+                <div key={pillar.title} className="p-8 md:p-10 border border-border bg-card">
+                  <div className="w-8 h-[2px] bg-secondary mb-6" />
+                  <h2 className="font-display text-xl md:text-2xl font-semibold text-primary mb-4">
+                    {lang === "en" ? pillar.title : pillar.titleCn}
+                  </h2>
+                  <p className="body-large">
+                    {lang === "en" ? pillar.description : pillar.descriptionCn}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default Impact;

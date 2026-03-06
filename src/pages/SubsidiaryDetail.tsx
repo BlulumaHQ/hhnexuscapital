@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/context/LanguageContext";
 
 const brands = [
   {
@@ -43,6 +44,7 @@ const brands = [
 
 const SubsidiaryDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { lang, t } = useLanguage();
 
   if (slug !== "hsin-hsin-holdings") {
     return (
@@ -50,8 +52,10 @@ const SubsidiaryDetail = () => {
         <Header />
         <main className="bg-background pt-28 pb-20">
           <div className="section-container text-center">
-            <h1 className="heading-section mb-4">Subsidiary Not Found</h1>
-            <Link to="/portfolio" className="text-secondary text-sm font-body">← Back to Portfolio</Link>
+            <h1 className="heading-section mb-4">{t("Subsidiary Not Found", "未找到子公司")}</h1>
+            <Link to="/portfolio" className="text-secondary text-sm font-body">
+              {t("← Back to Portfolio", "← 返回旗下事業")}
+            </Link>
           </div>
         </main>
         <Footer />
@@ -66,45 +70,51 @@ const SubsidiaryDetail = () => {
         <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
           <div className="section-container">
             <Link to="/portfolio" className="text-primary-foreground/40 hover:text-secondary text-xs font-body tracking-wide mb-6 inline-block transition-colors">
-              ← Portfolio
+              {t("← Portfolio", "← 旗下事業")}
             </Link>
             <div className="gold-line mb-6" />
-            <p className="label-uppercase mb-4">Operating Assets</p>
+            <p className="label-uppercase mb-4">{t("Operating Assets", "營運資產")}</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1]">
               HSIN HSIN HOLDINGS LTD.
             </h1>
-            <p className="font-display text-lg text-primary-foreground/50 mt-4">欣欣控股有限公司</p>
+            {lang === "zh" && (
+              <p className="font-display text-lg text-primary-foreground/50 mt-4">欣欣控股有限公司</p>
+            )}
           </div>
         </section>
 
         <section className="section-padding bg-background">
           <div className="section-container">
             <div className="max-w-3xl mb-16">
-              <p className="text-sm text-muted-foreground tracking-[0.15em] uppercase mb-4 font-body">Founded in Vancouver, 1995</p>
+              <p className="text-sm text-muted-foreground tracking-[0.15em] uppercase mb-4 font-body">
+                {t("Founded in Vancouver, 1995", "創立於溫哥華，1995年")}
+              </p>
               <p className="body-large mb-6">
-                Founded in Vancouver in 1995, HSIN HSIN HOLDINGS LTD. is a diversified business group spanning art craftsmanship, education, retail lifestyle, branding and design, and coffee and tea experiences.
+                {lang === "en"
+                  ? "Founded in Vancouver in 1995, HSIN HSIN HOLDINGS LTD. is a diversified business group spanning art craftsmanship, education, retail lifestyle, branding and design, and coffee and tea experiences."
+                  : "欣欣控股自 1995 年成立於溫哥華，事業涵蓋工藝美學與藝術裝裱、文化教育、生活選品零售、品牌設計與行銷整合，以及咖啡茶與健康食材體驗。"}
               </p>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-body">
-                欣欣控股自 1995 年成立於溫哥華，事業涵蓋工藝美學與藝術裝裱、文化教育、生活選品零售、品牌設計與行銷整合，以及咖啡茶與健康食材體驗。
-              </p>
-              <p className="body-large mb-4">
-                The group connects products, services, and cultural programming into a practical ecosystem for sustainable growth.
-              </p>
-              <p className="text-muted-foreground text-sm leading-relaxed font-body">
-                串聯商品、服務與文化內容，形成可持續成長的實務型生態系。
+              <p className="body-large">
+                {lang === "en"
+                  ? "The group connects products, services, and cultural programming into a practical ecosystem for sustainable growth."
+                  : "串聯商品、服務與文化內容，形成可持續成長的實務型生態系。"}
               </p>
             </div>
 
             {/* Brands */}
             <div className="gold-line mb-4" />
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">Brands</h2>
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
+              {t("Brands", "品牌")}
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {brands.map((brand) => (
                 <div key={brand.name} className="p-8 border border-border bg-card">
-                  <h3 className="font-display text-lg font-semibold text-primary mb-1">{brand.name}</h3>
-                  <p className="text-secondary/70 text-sm font-display mb-4">{brand.nameCn}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3 font-body">{brand.description}</p>
-                  <p className="text-xs text-muted-foreground/70 leading-relaxed font-body">{brand.descriptionCn}</p>
+                  <h3 className="font-display text-lg font-semibold text-primary mb-4">
+                    {lang === "en" ? brand.name : brand.nameCn}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-body">
+                    {lang === "en" ? brand.description : brand.descriptionCn}
+                  </p>
                 </div>
               ))}
             </div>
