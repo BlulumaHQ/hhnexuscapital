@@ -12,10 +12,11 @@ const About = () => (
           <div className="gold-line mb-6" />
           <p className="label-uppercase mb-4">About Us</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
-            A Holding Group Built on
+            Urban Strategic
             <br />
-            <span className="text-secondary">Institutional Discipline</span>
+            <span className="text-secondary">Platform Group</span>
           </h1>
+          <p className="font-display text-lg text-primary-foreground/50 mt-4">衡寰國際控股有限公司</p>
         </div>
       </section>
 
@@ -27,16 +28,16 @@ const About = () => (
           <div className="grid md:grid-cols-2 gap-12 md:gap-20">
             <div>
               <div className="w-8 h-[2px] bg-secondary mb-4" />
-              <h2 className="font-display text-2xl font-semibold text-primary mb-4">Mission</h2>
+              <h2 className="font-display text-2xl font-semibold text-primary mb-4">Vision</h2>
               <p className="body-large">
-                To create enduring institutional value by deploying disciplined capital and strategic expertise across diversified platforms in British Columbia.
+                To become North America's leading urban strategic platform group.
               </p>
             </div>
             <div>
               <div className="w-8 h-[2px] bg-secondary mb-4" />
-              <h2 className="font-display text-2xl font-semibold text-primary mb-4">Vision</h2>
+              <h2 className="font-display text-2xl font-semibold text-primary mb-4">Mission</h2>
               <p className="body-large">
-                To be recognized as one of the leading strategic holding groups in British Columbia, setting the standard for institutional governance and long-term value creation.
+                Integrate capital, governance channels, and international cultural networks into sustainable city-scale platforms.
               </p>
             </div>
           </div>
