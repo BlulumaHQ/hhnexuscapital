@@ -14,15 +14,15 @@ const ContactSection = () => (
         <div className="space-y-6 mb-12">
           <div>
             <p className="text-primary-foreground/40 text-xs tracking-[0.15em] uppercase mb-1 font-body">Location</p>
-            <p className="text-primary-foreground text-base font-body">Vancouver, British Columbia, Canada</p>
+            <p className="text-primary-foreground text-base font-body">Vancouver, BC, Canada</p>
           </div>
           <div>
             <p className="text-primary-foreground/40 text-xs tracking-[0.15em] uppercase mb-1 font-body">Email</p>
-            <p className="text-primary-foreground text-base font-body">TBD</p>
-          </div>
-          <div>
-            <p className="text-primary-foreground/40 text-xs tracking-[0.15em] uppercase mb-1 font-body">Phone</p>
-            <p className="text-primary-foreground text-base font-body">TBD</p>
+            <div className="space-y-1">
+              <p className="text-primary-foreground text-base font-body">info@</p>
+              <p className="text-primary-foreground text-base font-body">partners@</p>
+              <p className="text-primary-foreground text-base font-body">media@</p>
+            </div>
           </div>
         </div>
 

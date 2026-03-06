@@ -3,16 +3,22 @@ import Footer from "@/components/Footer";
 
 const pillars = [
   {
-    title: "Environmental Stewardship",
-    description: "TBD",
+    title: "Cultural Continuity",
+    titleCn: "文化延續",
+    description: "Protecting and modernizing cultural heritage through scalable IP.",
+    descriptionCn: "透過文化 IP 的制度化發展讓傳承可持續。",
   },
   {
-    title: "Social Impact",
-    description: "TBD",
+    title: "Community Inclusion",
+    titleCn: "社區共融",
+    description: "Encouraging multicultural engagement and accessible public programming.",
+    descriptionCn: "推動多族裔參與與公共文化活動。",
   },
   {
-    title: "Governance & Ethics",
-    description: "TBD",
+    title: "Responsible Partnerships",
+    titleCn: "責任合作",
+    description: "Promoting transparent collaboration and long-term accountability.",
+    descriptionCn: "建立透明且長期的合作關係。",
   },
 ];
 
@@ -25,11 +31,9 @@ const Impact = () => (
           <div className="gold-line mb-6" />
           <p className="label-uppercase mb-4">Impact / ESG</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
-            Responsible Growth, <span className="text-secondary">Measurable Impact</span>
+            Building Platforms That Deliver <span className="text-secondary">Measurable Community Value</span>
           </h1>
-          <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-            Our commitment to environmental, social, and governance principles is embedded in every decision we make and every partnership we form.
-          </p>
+          <p className="font-display text-lg text-primary-foreground/50 mt-4">社會影響力</p>
         </div>
       </section>
 
@@ -39,22 +43,13 @@ const Impact = () => (
             {pillars.map((pillar) => (
               <div key={pillar.title} className="p-8 md:p-10 border border-border bg-card">
                 <div className="w-8 h-[2px] bg-secondary mb-6" />
-                <h2 className="font-display text-xl md:text-2xl font-semibold text-primary mb-4">{pillar.title}</h2>
-                <p className="body-large">{pillar.description}</p>
+                <h2 className="font-display text-xl md:text-2xl font-semibold text-primary mb-2">{pillar.title}</h2>
+                <p className="text-secondary/70 text-sm font-display mb-4">{pillar.titleCn}</p>
+                <p className="body-large mb-4">{pillar.description}</p>
+                <p className="text-muted-foreground text-sm font-body">{pillar.descriptionCn}</p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-card border-t border-border">
-        <div className="section-container max-w-3xl">
-          <div className="gold-line mb-6" />
-          <h2 className="heading-section mb-6">ESG Framework</h2>
-          <p className="body-large mb-6">
-            HH Nexus Holdings integrates ESG considerations into our investment analysis, portfolio management, and corporate governance practices. Our framework is aligned with internationally recognized standards and reporting guidelines.
-          </p>
-          <p className="body-large">TBD</p>
         </div>
       </section>
     </main>

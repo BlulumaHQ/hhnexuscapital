@@ -5,10 +5,24 @@ const PortfolioSection = () => (
     <div className="section-container">
       <div className="max-w-2xl mb-16">
         <div className="gold-line mb-6" />
-        <p className="label-uppercase mb-4">Portfolio Highlight</p>
+        <p className="label-uppercase mb-4">Portfolio</p>
         <h2 className="heading-section mb-6">
           Strategic Investments &amp; Holdings
         </h2>
+        <p className="body-large mb-4">
+          Our holding structure connects strategic platforms with operating assets.
+        </p>
+        <p className="body-large mb-6">
+          Key operating portfolio includes HSIN HSIN HOLDINGS LTD., a diversified Vancouver-based business group with strong multi-industry execution capability.
+        </p>
+        <div className="pt-6 border-t border-border">
+          <p className="text-muted-foreground text-sm leading-relaxed mb-3 font-body">
+            我們以控股架構串聯平台型業務與營運型資產群。
+          </p>
+          <p className="text-muted-foreground text-sm leading-relaxed font-body">
+            核心營運資產包含欣欣控股有限公司（HSIN HSIN HOLDINGS LTD.），一個深耕溫哥華並具跨產業執行能力的多元企業群。
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6">
@@ -24,7 +38,7 @@ const PortfolioSection = () => (
               HSIN HSIN HOLDINGS LTD.
             </h3>
             <p className="body-large max-w-2xl">
-              A diversified group spanning art craftsmanship, education, retail lifestyle, branding & design, and coffee and tea experiences.
+              A diversified group spanning art craftsmanship, education, retail lifestyle, branding &amp; design, and coffee and tea experiences.
             </p>
           </div>
           <span className="mt-4 md:mt-0 text-secondary text-sm font-body tracking-wide whitespace-nowrap">
