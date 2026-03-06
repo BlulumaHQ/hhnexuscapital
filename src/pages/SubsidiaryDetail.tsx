@@ -2,11 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const subsidiaryData: Record<string, { name: string; sector: string; description: string }> = {
-  "urban-1": { name: "TBD", sector: "Urban Platforms", description: "TBD" },
-  "urban-2": { name: "TBD", sector: "Urban Platforms", description: "TBD" },
-  "asset-1": { name: "TBD", sector: "Operating Assets", description: "TBD" },
-  "asset-2": { name: "TBD", sector: "Operating Assets", description: "TBD" },
+const subsidiaryData: Record<string, { name: string; sector: string; founded: string; description: string; verticals: string[] }> = {
+  "hsin-hsin-holdings": {
+    name: "HSIN HSIN HOLDINGS LTD.",
+    sector: "Operating Assets",
+    founded: "Founded in Vancouver, 1995",
+    description: "A diversified group spanning art craftsmanship, education, retail lifestyle, branding & design, and coffee and tea experiences.",
+    verticals: ["Art Craftsmanship", "Education", "Retail Lifestyle", "Branding & Design", "Coffee and Tea Experiences"],
+  },
 };
 
 const SubsidiaryDetail = () => {
@@ -47,9 +50,23 @@ const SubsidiaryDetail = () => {
 
         <section className="section-padding bg-background">
           <div className="section-container max-w-3xl">
-            <p className="body-large mb-8">{subsidiary.description}</p>
+            <p className="text-sm text-muted-foreground tracking-[0.15em] uppercase mb-4 font-body">{subsidiary.founded}</p>
+            <p className="body-large mb-12">{subsidiary.description}</p>
+
+            <div className="mb-12">
+              <div className="w-8 h-[2px] bg-secondary mb-4" />
+              <h2 className="font-display text-2xl font-semibold text-primary mb-6">Business Verticals</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {subsidiary.verticals.map((v) => (
+                  <div key={v} className="p-6 border border-border bg-card">
+                    <h3 className="font-display text-lg font-semibold text-primary">{v}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="space-y-12">
-              {["Overview", "Services", "Leadership", "Key Metrics"].map((title, i) => (
+              {["Overview", "Leadership", "Key Metrics"].map((title, i) => (
                 <div key={i} className="border-b border-border pb-8 last:border-0">
                   <h2 className="font-display text-2xl font-semibold text-primary mb-4">{title}</h2>
                   <p className="body-large">TBD</p>

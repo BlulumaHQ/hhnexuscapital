@@ -2,20 +2,68 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const platformData: Record<string, { name: string; category: string }> = {
-  "real-estate": { name: "TBD", category: "Real Estate & Development" },
-  "technology": { name: "TBD", category: "Technology & Innovation" },
-  "advisory": { name: "TBD", category: "Advisory & Consulting" },
+const platformData: Record<string, { name: string; category: string; sections: { title: string; content: string }[] }> = {
+  "urban-strategic-forum": {
+    name: "Urban Strategic Forum Platform",
+    category: "City-Level Strategy",
+    sections: [
+      { title: "Definition", content: "A convening platform that brings together government officials, capital partners, and community leaders to collaboratively shape long-term urban development agendas at the city level." },
+      { title: "Services", content: "TBD" },
+      { title: "Deliverables", content: "TBD" },
+      { title: "Who It Is For", content: "Municipal governments, urban planners, institutional investors, and community development organizations." },
+      { title: "Revenue Model", content: "TBD" },
+      { title: "Case Studies", content: "TBD" },
+    ],
+  },
+  "public-private-advisory": {
+    name: "Public-Private Strategy & Advisory",
+    category: "Governance & Policy",
+    sections: [
+      { title: "Definition", content: "A structured advisory platform that bridges institutional governance and private sector execution, enabling collaborative strategy development between public and private entities." },
+      { title: "Services", content: "TBD" },
+      { title: "Deliverables", content: "TBD" },
+      { title: "Who It Is For", content: "Government agencies, Crown corporations, private enterprises seeking public-sector alignment, and policy advisory organizations." },
+      { title: "Revenue Model", content: "TBD" },
+      { title: "Case Studies", content: "TBD" },
+    ],
+  },
+  "cultural-ip": {
+    name: "International Cultural IP Platform",
+    category: "Cultural Development",
+    sections: [
+      { title: "Definition", content: "A platform dedicated to developing, curating, and licensing cultural intellectual property across international markets and urban centres." },
+      { title: "Services", content: "TBD" },
+      { title: "Deliverables", content: "TBD" },
+      { title: "Who It Is For", content: "Cultural institutions, international brands, urban developers integrating cultural programming, and heritage organizations." },
+      { title: "Revenue Model", content: "TBD" },
+      { title: "Case Studies", content: "TBD" },
+    ],
+  },
+  "nexus-global-forum": {
+    name: "Nexus Global Forum",
+    category: "International Convening",
+    sections: [
+      { title: "Definition", content: "A premier international convening platform connecting global leaders across capital, policy, and cultural sectors to drive cross-border collaboration and strategic alignment." },
+      { title: "Services", content: "TBD" },
+      { title: "Deliverables", content: "TBD" },
+      { title: "Who It Is For", content: "Global institutional leaders, sovereign wealth funds, multinational advisory firms, and international cultural organizations." },
+      { title: "Revenue Model", content: "TBD" },
+      { title: "Case Studies", content: "TBD" },
+    ],
+  },
+  "industry-capital": {
+    name: "Industry & Capital Connection Platform",
+    category: "Capital Integration",
+    sections: [
+      { title: "Definition", content: "A strategic platform facilitating connections between industry operators and institutional capital partners, enabling structured deal flow and long-term investment partnerships." },
+      { title: "Services", content: "TBD" },
+      { title: "Deliverables", content: "TBD" },
+      { title: "Who It Is For", content: "Industry operators seeking capital, institutional investors, family offices, and private equity groups focused on urban and cultural sectors." },
+      { title: "Revenue Model", content: "TBD" },
+      { title: "Case Studies", content: "TBD" },
+    ],
+  },
 };
-
-const sections = [
-  { title: "Definition", content: "TBD" },
-  { title: "Services", content: "TBD" },
-  { title: "Deliverables", content: "TBD" },
-  { title: "Who It Is For", content: "TBD" },
-  { title: "Revenue Model", content: "TBD" },
-  { title: "Case Studies", content: "TBD" },
-];
 
 const PlatformDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -56,7 +104,7 @@ const PlatformDetail = () => {
         <section className="section-padding bg-background">
           <div className="section-container">
             <div className="space-y-16">
-              {sections.map((section, i) => (
+              {platform.sections.map((section, i) => (
                 <div key={i} className="border-b border-border pb-12 last:border-0">
                   <div className="flex items-start gap-6">
                     <span className="text-secondary text-xs font-body tracking-[0.15em] uppercase mt-1 min-w-[24px]">

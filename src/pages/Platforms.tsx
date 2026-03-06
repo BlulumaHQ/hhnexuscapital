@@ -4,22 +4,34 @@ import Footer from "@/components/Footer";
 
 const platforms = [
   {
-    slug: "real-estate",
-    name: "TBD",
-    category: "Real Estate & Development",
-    description: "TBD",
+    slug: "urban-strategic-forum",
+    name: "Urban Strategic Forum Platform",
+    category: "City-Level Strategy",
+    description: "Convening government, capital, and community leaders to shape long-term urban development agendas.",
   },
   {
-    slug: "technology",
-    name: "TBD",
-    category: "Technology & Innovation",
-    description: "TBD",
+    slug: "public-private-advisory",
+    name: "Public-Private Strategy & Advisory",
+    category: "Governance & Policy",
+    description: "Bridging institutional governance and private sector execution through structured advisory frameworks.",
   },
   {
-    slug: "advisory",
-    name: "TBD",
-    category: "Advisory & Consulting",
-    description: "TBD",
+    slug: "cultural-ip",
+    name: "International Cultural IP Platform",
+    category: "Cultural Development",
+    description: "Developing and licensing cultural intellectual property across international markets and urban centres.",
+  },
+  {
+    slug: "nexus-global-forum",
+    name: "Nexus Global Forum",
+    category: "International Convening",
+    description: "A premier convening platform connecting global leaders across capital, policy, and cultural sectors.",
+  },
+  {
+    slug: "industry-capital",
+    name: "Industry & Capital Connection Platform",
+    category: "Capital Integration",
+    description: "Facilitating strategic connections between industry operators and institutional capital partners.",
   },
 ];
 
@@ -30,12 +42,12 @@ const Platforms = () => (
       <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24">
         <div className="section-container">
           <div className="gold-line mb-6" />
-          <p className="label-uppercase mb-4">Our Platforms</p>
+          <p className="label-uppercase mb-4">Five Strategic Platforms</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
-            Diversified Operating <span className="text-secondary">Platforms</span>
+            Urban Influence <span className="text-secondary">Platforms</span>
           </h1>
           <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-            Each platform operates with independent governance while benefiting from shared institutional resources, strategic oversight, and cross-platform synergies.
+            Each platform integrates capital, policy collaboration, and cultural IP development to structure long-term city-level influence.
           </p>
         </div>
       </section>

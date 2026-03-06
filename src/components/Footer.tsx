@@ -6,11 +6,12 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 mb-12">
         {/* Tagline */}
         <div>
-          <p className="font-display text-lg md:text-xl text-primary-foreground font-semibold mb-3">
-            HH Nexus Holdings
+          <p className="font-display text-lg md:text-xl text-primary-foreground font-semibold mb-1">
+            HH Nexus Holdings Ltd.
           </p>
+          <p className="font-display text-sm text-secondary mb-3">衡寰國際控股有限公司</p>
           <p className="text-primary-foreground/50 text-sm leading-relaxed font-body">
-            Building institutional value through strategic platforms, disciplined capital deployment, and enduring partnerships across British Columbia.
+            Where Capital Meets Governance and Culture. Structuring long-term urban influence platforms across British Columbia and beyond.
           </p>
         </div>
 
@@ -42,8 +43,7 @@ const Footer = () => (
         <div>
           <p className="text-primary-foreground/40 text-xs tracking-[0.15em] uppercase mb-4 font-body">Contact</p>
           <div className="space-y-2">
-            <p className="text-primary-foreground/60 text-sm font-body">TBD</p>
-            <p className="text-primary-foreground/60 text-sm font-body">British Columbia, Canada</p>
+            <p className="text-primary-foreground/60 text-sm font-body">Vancouver, British Columbia, Canada</p>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ const Footer = () => (
       {/* Bottom bar */}
       <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-primary-foreground/40 text-xs tracking-wide font-body">
-          © {new Date().getFullYear()} HH Nexus Holdings. All rights reserved.
+          © {new Date().getFullYear()} HH Nexus Holdings Ltd. All rights reserved.
         </p>
         <div className="flex gap-6">
           <Link to="/privacy" className="text-primary-foreground/40 hover:text-secondary text-xs tracking-wide transition-colors font-body">
