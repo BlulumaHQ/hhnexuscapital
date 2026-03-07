@@ -13,7 +13,7 @@ const navEn = [
 
 const navZh = [
   { label: "關於我們", href: "/about" },
-  { label: "投資策略", href: "/investment" },
+  { label: "資本理念", href: "/investment" },
   { label: "投資組合", href: "/portfolio" },
   { label: "領導團隊", href: "/leadership" },
   { label: "洞察觀點", href: "/insights" },
@@ -34,10 +34,10 @@ const Footer = () => {
               {t("HH Nexus Capital Ltd.", "衡寰資本有限公司")}
             </p>
             <p className="font-display text-sm text-secondary mb-3">
-              {t("Global Investment & Strategic Platform", "全球投資與戰略平台")}
+              {t("Family Office & Cultural Capital Platform", "家族辦公室與文化資本平台")}
             </p>
             <p className="text-primary-foreground/50 text-sm leading-relaxed font-body">
-              {t("Connecting Capital, Innovation and Culture.", "連結資本、創新與文化。")}
+              {t("Connecting Capital, Culture, and Long-Term Value.", "連結資本、文化與長期價值。")}
             </p>
           </div>
 

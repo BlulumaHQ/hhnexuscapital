@@ -7,69 +7,95 @@ const InvestmentThesisSection = () => {
   return (
     <section className="section-padding bg-background">
       <div className="section-container">
+        {/* Platform Overview */}
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           <div>
             <div className="gold-line mb-6" />
-            <p className="label-uppercase mb-4">{t("Investment Thesis", "投資理念")}</p>
+            <p className="label-uppercase mb-4">{t("Platform Overview", "平台概覽")}</p>
             <h2 className="heading-section mb-6">
               {lang === "en" ? (
-                <>Investing at the Intersection of <span className="text-secondary">Innovation & Culture</span></>
+                <>A Family-Backed <span className="text-secondary">Capital Platform</span></>
               ) : (
-                <>投資於<span className="text-secondary">創新與文化</span>的交匯點</>
+                <>家族支持的<span className="text-secondary">資本平台</span></>
               )}
             </h2>
           </div>
           <div>
             <p className="body-large mb-6">
               {t(
-                "HH Nexus Capital invests in companies and platforms shaping the future of technology, culture, and global consumer ecosystems.",
-                "衡寰資本投資於塑造科技、文化與全球消費生態系統未來的公司和平台。"
-              )}
-            </p>
-            <p className="body-large mb-6">
-              {t(
-                "We believe the next generation of opportunity lies at the intersection of innovation, creativity, and global connectivity.",
-                "我們相信下一代機遇在於創新、創造力與全球連結的交匯點。"
+                "HH Nexus Capital operates as a family-backed capital platform focused on long-term value creation across culture, craftsmanship, lifestyle, and strategic partnerships.",
+                "衡寰資本作為家族支持的資本平台運營，專注於文化、工藝、生活方式和戰略合作夥伴關係的長期價值創造。"
               )}
             </p>
             <p className="body-large">
               {t(
-                "Our strategy focuses on identifying visionary founders and supporting them through long-term capital, strategic partnerships, and global network access.",
-                "我們的策略專注於發掘有遠見的創業者，並透過長期資本、策略合作與全球網絡支持他們。"
+                "The platform connects operating companies, creative industries, and global networks into a cohesive ecosystem.",
+                "平台將營運公司、創意產業和全球網絡連結成一個有凝聚力的生態系統。"
               )}
             </p>
           </div>
         </div>
 
-        {/* Investment Focus */}
+        {/* Capital Philosophy */}
+        <div className="mt-16 md:mt-24 pt-16 border-t border-border">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+              <div className="gold-line mb-6" />
+              <p className="label-uppercase mb-4">{t("Capital Philosophy", "資本理念")}</p>
+              <h2 className="heading-section mb-6">
+                {lang === "en" ? (
+                  <>Patient Capital, <span className="text-secondary">Lasting Impact</span></>
+                ) : (
+                  <>耐心資本，<span className="text-secondary">持久影響</span></>
+                )}
+              </h2>
+            </div>
+            <div>
+              <p className="body-large mb-6">
+                {t(
+                  "HH Nexus Capital believes that meaningful value is created through patience, cultural relevance, and strong brand stewardship.",
+                  "衡寰資本相信，有意義的價值是通過耐心、文化相關性和強大的品牌管理來創造的。"
+                )}
+              </p>
+              <p className="body-large">
+                {t(
+                  "Rather than short-term financial engineering, the platform focuses on nurturing businesses, creative ecosystems, and community-driven initiatives that generate lasting impact.",
+                  "平台不追求短期金融工程，而是專注於培育企業、創意生態系統和社區驅動的倡議，以產生持久的影響。"
+                )}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Platform Pillars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16 md:mt-24 pt-16 border-t border-border">
           {[
             {
-              title: t("AI & Emerging Technology", "AI 與新興科技"),
+              title: t("Craftsmanship & Heritage", "工藝與傳承"),
               desc: t(
-                "Artificial intelligence, automation, data platforms, and next-generation infrastructure.",
-                "人工智能、自動化、數據平台與下一代基礎設施。"
+                "Preserving and elevating traditional craftsmanship through modern business practices and long-term stewardship.",
+                "通過現代商業實踐和長期管理，保護和提升傳統工藝。"
               ),
             },
             {
-              title: t("Consumer Innovation", "消費創新"),
+              title: t("Creative Industries", "創意產業"),
               desc: t(
-                "Community-driven brands, lifestyle platforms, and digital consumer ecosystems.",
-                "社群驅動品牌、生活方式平台與數位消費生態系統。"
+                "Supporting art education, cultural programs, and creative skill development that strengthen communities.",
+                "支持藝術教育、文化項目和創意技能發展，以強化社區。"
               ),
             },
             {
-              title: t("Culture & Creative Economy", "文化與創意經濟"),
+              title: t("Lifestyle & Community", "生活方式與社區"),
               desc: t(
-                "Media, arts, cultural platforms, and the global experience economy.",
-                "媒體、藝術、文化平台與全球體驗經濟。"
+                "Building hospitality and lifestyle brands rooted in quality sourcing, craftsmanship, and community engagement.",
+                "建立以優質採購、工藝和社區參與為根基的餐飲和生活方式品牌。"
               ),
             },
             {
-              title: t("Strategic Platforms", "戰略平台"),
+              title: t("Brand & Digital Strategy", "品牌與數位策略"),
               desc: t(
-                "Platforms that connect industries and create scalable network effects.",
-                "連結產業並創造可擴展網絡效應的平台。"
+                "Providing brand identity, digital design, and strategic communications that empower the entire ecosystem.",
+                "提供品牌識別、數位設計和策略傳播，以賦能整個生態系統。"
               ),
             },
           ].map((item) => (
@@ -86,7 +112,7 @@ const InvestmentThesisSection = () => {
             to="/investment"
             className="inline-flex items-center text-secondary text-sm font-body tracking-wide hover:text-secondary/80 transition-colors"
           >
-            {t("Learn More About Our Strategy →", "了解更多投資策略 →")}
+            {t("Learn More About Our Philosophy →", "了解更多我們的理念 →")}
           </Link>
         </div>
       </div>

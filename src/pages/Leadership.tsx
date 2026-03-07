@@ -18,9 +18,9 @@ const Leadership = () => {
             <p className="label-uppercase mb-4">{t("Leadership", "領導團隊")}</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
               {lang === "en" ? (
-                <>Our <span className="text-secondary">Team</span></>
+                <>Our <span className="text-secondary">Leadership</span></>
               ) : (
-                <>我們的<span className="text-secondary">團隊</span></>
+                <>我們的<span className="text-secondary">領導團隊</span></>
               )}
             </h1>
           </div>
@@ -40,76 +40,27 @@ const Leadership = () => {
               <div className="md:col-span-2">
                 <h2 className="font-display text-3xl font-semibold text-primary mb-2">Emily Lin</h2>
                 <p className="text-secondary text-sm font-body tracking-wide mb-6">
-                  {t("Founder & Managing Partner", "創辦人兼執行合夥人")}
+                  {t("Founder & Managing Director", "創辦人兼執行董事")}
                 </p>
                 <div className="space-y-4">
                   <p className="body-large">
                     {t(
-                      "Emily Lin is an entrepreneur, investor, and strategic platform builder with experience across brand strategy, cultural platforms, and global partnerships.",
-                      "Emily Lin 是一位企業家、投資者和策略平台建設者，在品牌策略、文化平台和全球合作方面擁有豐富經驗。"
+                      "Emily Lin is an entrepreneur, cultural strategist, and platform builder with experience across brand development, creative industries, and cross-border partnerships.",
+                      "Emily Lin 是一位企業家、文化策略師和平台建設者，在品牌發展、創意產業和跨境合作方面擁有豐富經驗。"
                     )}
                   </p>
                   <p className="body-large">
                     {t(
-                      "She founded HH Nexus Capital to connect capital with visionary founders and emerging industries across technology, culture, and global consumer ecosystems.",
-                      "她創立衡寰資本，將資本與有遠見的創業者以及科技、文化和全球消費生態系統中的新興產業聯繫起來。"
+                      "She founded HH Nexus Capital to build a family-backed platform connecting craftsmanship, creative industries, and lifestyle brands through long-term stewardship and global networks.",
+                      "她創立衡寰資本，建立一個家族支持的平台，通過長期管理和全球網絡連結工藝、創意產業和生活方式品牌。"
                     )}
                   </p>
                   <p className="body-large">
                     {t(
-                      "Her work focuses on building platforms that bridge creativity, innovation, and long-term capital.",
-                      "她的工作專注於建立連結創造力、創新和長期資本的平台。"
+                      "Under her leadership, the platform has grown to include five operating companies spanning art craftsmanship, creative education, event production, hospitality, and digital design — each contributing to a cohesive ecosystem rooted in cultural value and community engagement.",
+                      "在她的領導下，平台已成長為包含五家營運公司，橫跨藝術工藝、創意教育、活動製作、餐飲和數位設計——每家公司都為植根於文化價值和社區參與的有凝聚力的生態系統做出貢獻。"
                     )}
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Investment Team */}
-        <section className="section-padding bg-card border-t border-border">
-          <div className="section-container">
-            <div className="gold-line mb-6" />
-            <p className="label-uppercase mb-4">{t("Investment Team", "投資團隊")}</p>
-            <h2 className="heading-section mb-12">{t("Partners & Directors", "合夥人與總監")}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-8 md:p-10 bg-background border border-border">
-                <div className="flex items-start gap-6">
-                  <div className="w-20 h-20 flex-shrink-0 bg-primary/5 border border-border flex items-center justify-center">
-                    <span className="text-2xl font-display text-secondary/30 font-bold">DC</span>
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold text-primary mb-1">Daniel Chen</h3>
-                    <p className="text-secondary text-sm font-body tracking-wide mb-4">
-                      {t("Partner – Technology Investments", "合夥人 – 科技投資")}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-body">
-                      {t(
-                        "Daniel focuses on AI infrastructure, software platforms, and data-driven innovation. He brings deep expertise in evaluating technology companies at growth stage and has led investments across enterprise SaaS, machine learning infrastructure, and developer tools.",
-                        "Daniel 專注於 AI 基礎設施、軟體平台和數據驅動創新。他在評估成長階段科技公司方面擁有深厚的專業知識，並主導了企業 SaaS、機器學習基礎設施和開發者工具的投資。"
-                      )}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-8 md:p-10 bg-background border border-border">
-                <div className="flex items-start gap-6">
-                  <div className="w-20 h-20 flex-shrink-0 bg-primary/5 border border-border flex items-center justify-center">
-                    <span className="text-2xl font-display text-secondary/30 font-bold">SZ</span>
-                  </div>
-                  <div>
-                    <h3 className="font-display text-xl font-semibold text-primary mb-1">Sophia Zhang</h3>
-                    <p className="text-secondary text-sm font-body tracking-wide mb-4">
-                      {t("Investment Director – Consumer & Culture", "投資總監 – 消費與文化")}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-body">
-                      {t(
-                        "Sophia specializes in consumer brands, cultural economy platforms, and global creative ventures. She identifies opportunities at the intersection of lifestyle, community, and digital commerce, with a focus on brands that build deep consumer loyalty through authentic cultural engagement.",
-                        "Sophia 專注於消費品牌、文化經濟平台和全球創意企業。她在生活方式、社群和數位商務的交匯點發掘機會，重點關注透過真實文化參與建立深厚消費者忠誠度的品牌。"
-                      )}
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -117,33 +68,33 @@ const Leadership = () => {
         </section>
 
         {/* Advisors */}
-        <section className="section-padding bg-background border-t border-border">
+        <section className="section-padding bg-card border-t border-border">
           <div className="section-container">
             <div className="gold-line mb-6" />
             <p className="label-uppercase mb-4">{t("Advisors", "顧問")}</p>
             <h2 className="heading-section mb-12">{t("Strategic Advisors", "策略顧問")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="p-8 bg-card border border-border">
+              <div className="p-8 bg-background border border-border">
                 <h3 className="font-display text-xl font-semibold text-primary mb-1">Michael Turner</h3>
                 <p className="text-secondary text-sm font-body tracking-wide mb-4">
                   {t("Global Strategy Advisor", "全球策略顧問")}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed font-body">
                   {t(
-                    "Former executive advisor for international investment platforms. Michael brings decades of experience in cross-border investment strategy, institutional fund structuring, and global market entry. He has advised sovereign wealth funds, family offices, and institutional investors across North America, Europe, and Asia.",
-                    "前國際投資平台高管顧問。Michael 在跨境投資策略、機構基金架構和全球市場進入方面擁有數十年經驗。他曾為主權財富基金、家族辦公室和遍布北美、歐洲和亞洲的機構投資者提供諮詢。"
+                    "Former executive advisor for international investment platforms. Michael brings decades of experience in cross-border strategy, institutional structuring, and global market development. He has advised family offices, cultural institutions, and private capital platforms across North America, Europe, and Asia.",
+                    "前國際投資平台高管顧問。Michael 在跨境策略、機構架構和全球市場開發方面擁有數十年經驗。他曾為北美、歐洲和亞洲的家族辦公室、文化機構和私人資本平台提供諮詢。"
                   )}
                 </p>
               </div>
-              <div className="p-8 bg-card border border-border">
+              <div className="p-8 bg-background border border-border">
                 <h3 className="font-display text-xl font-semibold text-primary mb-1">Kenji Tanaka</h3>
                 <p className="text-secondary text-sm font-body tracking-wide mb-4">
                   {t("Asia Market Advisor", "亞洲市場顧問")}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed font-body">
                   {t(
-                    "Expert in cross-border partnerships between North America and Asia. Kenji specializes in bridging Western innovation ecosystems with Asian capital markets and consumer landscapes. His network spans technology ventures in Tokyo, Singapore, and Seoul, with deep expertise in cultural adaptation strategies for market entry.",
-                    "北美與亞洲跨境合作專家。Kenji 專注於將西方創新生態系統與亞洲資本市場和消費景觀連結起來。他的網絡遍及東京、新加坡和首爾的科技企業，在市場進入的文化適應策略方面擁有深厚的專業知識。"
+                    "Expert in cross-border partnerships between North America and Asia. Kenji specializes in bridging Western creative industries with Asian markets and cultural landscapes. His network spans creative ventures in Tokyo, Singapore, and Seoul, with deep expertise in cultural adaptation and partnership development.",
+                    "北美與亞洲跨境合作專家。Kenji 專注於將西方創意產業與亞洲市場和文化景觀連結起來。他的網絡遍及東京、新加坡和首爾的創意企業，在文化適應和合作夥伴關係發展方面擁有深厚的專業知識。"
                   )}
                 </p>
               </div>

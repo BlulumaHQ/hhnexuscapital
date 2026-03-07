@@ -23,20 +23,18 @@ const GlobalNetworkSection = () => {
             </h2>
             <p className="body-large">
               {t(
-                "HH Nexus Capital operates through a global network of partners, founders, and institutions across North America, Asia, and emerging innovation ecosystems.",
-                "衡寰資本透過遍布北美、亞洲及新興創新生態系統的全球合作夥伴、創業者與機構網絡運營。"
+                "HH Nexus Capital connects North America and Asia through a network of partners, cultural institutions, and creative communities. Our platform bridges heritage industries with global opportunities.",
+                "衡寰資本通過合作夥伴、文化機構和創意社區的網絡連結北美和亞洲。我們的平台將傳統產業與全球機會連接起來。"
               )}
             </p>
           </div>
 
           <div className="relative">
-            {/* Stylized globe representation */}
             <div className="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center">
               <div className="absolute inset-0 rounded-full border border-border/50" />
               <div className="absolute inset-4 rounded-full border border-border/30" />
               <div className="absolute inset-8 rounded-full border border-border/20" />
               <Globe className="w-16 h-16 text-secondary/40" />
-              {/* Hub dots */}
               <div className="absolute top-[20%] left-[15%] w-3 h-3 bg-secondary rounded-full animate-pulse" title="Vancouver" />
               <div className="absolute top-[55%] right-[20%] w-3 h-3 bg-secondary rounded-full animate-pulse" title="Singapore" />
               <div className="absolute top-[30%] right-[15%] w-3 h-3 bg-secondary rounded-full animate-pulse" title="Tokyo" />

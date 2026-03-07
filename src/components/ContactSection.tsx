@@ -15,8 +15,8 @@ const ContactSection = () => {
           </h2>
           <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mb-10">
             {t(
-              "For investment inquiries, partnership opportunities, or to submit a pitch deck, please reach out to our team.",
-              "如有投資諮詢、合作機會或提交商業計劃書，請與我們的團隊聯繫。"
+              "For partnership opportunities, collaboration inquiries, or to learn more about the HH Nexus Capital platform, please reach out to our team.",
+              "如有合作機會、協作諮詢或了解更多衡寰資本平台資訊，請與我們的團隊聯繫。"
             )}
           </p>
 
@@ -41,12 +41,6 @@ const ContactSection = () => {
               className="inline-flex items-center justify-center px-8 py-3.5 bg-secondary text-secondary-foreground text-sm font-medium tracking-wide hover:bg-secondary/90 transition-colors"
             >
               {t("Contact Us", "聯絡我們")}
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 border border-primary-foreground/20 text-primary-foreground/80 text-sm font-medium tracking-wide hover:border-secondary hover:text-secondary transition-colors"
-            >
-              {t("Submit Pitch Deck", "提交商業計劃書")}
             </Link>
           </div>
         </div>

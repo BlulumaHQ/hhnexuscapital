@@ -17,7 +17,7 @@ const navItemsEn = [
 const navItemsZh = [
   { label: "首頁", href: "/" },
   { label: "關於我們", href: "/about" },
-  { label: "投資策略", href: "/investment" },
+  { label: "資本理念", href: "/investment" },
   { label: "投資組合", href: "/portfolio" },
   { label: "領導團隊", href: "/leadership" },
   { label: "洞察觀點", href: "/insights" },
