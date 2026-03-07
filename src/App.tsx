@@ -14,6 +14,7 @@ const Portfolio = lazy(() => import("./pages/Portfolio"));
 const Leadership = lazy(() => import("./pages/Leadership"));
 const Insights = lazy(() => import("./pages/Insights"));
 const Contact = lazy(() => import("./pages/Contact"));
+const PortfolioDetail = lazy(() => import("./pages/PortfolioDetail"));
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/investment" element={<Investment />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio/:slug" element={<PortfolioDetail />} />
               <Route path="/leadership" element={<Leadership />} />
               <Route path="/insights" element={<Insights />} />
               <Route path="/contact" element={<Contact />} />
