@@ -7,22 +7,20 @@ import { useLanguage } from "@/context/LanguageContext";
 const navItemsEn = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Platforms", href: "/platforms" },
+  { label: "Investment", href: "/investment" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Impact", href: "/impact" },
+  { label: "Leadership", href: "/leadership" },
   { label: "Insights", href: "/insights" },
-  { label: "Partners", href: "/partners" },
   { label: "Contact", href: "/contact" },
 ];
 
 const navItemsZh = [
   { label: "首頁", href: "/" },
   { label: "關於我們", href: "/about" },
-  { label: "平台架構", href: "/platforms" },
-  { label: "旗下事業", href: "/portfolio" },
-  { label: "社會影響力", href: "/impact" },
+  { label: "投資策略", href: "/investment" },
+  { label: "投資組合", href: "/portfolio" },
+  { label: "領導團隊", href: "/leadership" },
   { label: "洞察觀點", href: "/insights" },
-  { label: "合作夥伴", href: "/partners" },
   { label: "聯絡我們", href: "/contact" },
 ];
 
@@ -40,7 +38,6 @@ const Header = () => {
           <img src={logo} alt="HH Nexus Capital" className="h-16 md:h-20 w-auto" />
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6">
           {navItems.map((item) => (
             <Link
@@ -57,7 +54,6 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Desktop Right */}
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => setLang(lang === "en" ? "zh" : "en")}
@@ -70,11 +66,10 @@ const Header = () => {
             to="/contact"
             className="inline-flex items-center justify-center px-6 py-2.5 bg-secondary text-secondary-foreground text-xs font-medium tracking-[0.1em] uppercase hover:bg-secondary/90 transition-colors font-body"
           >
-            {t("Become a Partner", "合作洽談")}
+            {t("Contact Us", "聯絡我們")}
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden text-primary-foreground"
@@ -84,7 +79,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {open && (
         <nav className="lg:hidden bg-primary border-t border-white/5">
           <div className="section-container py-6 flex flex-col gap-4">
@@ -115,7 +109,7 @@ const Header = () => {
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center px-6 py-2.5 bg-secondary text-secondary-foreground text-xs font-medium tracking-[0.1em] uppercase font-body"
               >
-                {t("Become a Partner", "合作洽談")}
+                {t("Contact Us", "聯絡我們")}
               </Link>
             </div>
           </div>

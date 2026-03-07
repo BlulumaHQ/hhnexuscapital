@@ -9,13 +9,10 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const About = lazy(() => import("./pages/About"));
-const Platforms = lazy(() => import("./pages/Platforms"));
-const PlatformDetail = lazy(() => import("./pages/PlatformDetail"));
+const Investment = lazy(() => import("./pages/Investment"));
 const Portfolio = lazy(() => import("./pages/Portfolio"));
-const SubsidiaryDetail = lazy(() => import("./pages/SubsidiaryDetail"));
-const Impact = lazy(() => import("./pages/Impact"));
+const Leadership = lazy(() => import("./pages/Leadership"));
 const Insights = lazy(() => import("./pages/Insights"));
-const Partners = lazy(() => import("./pages/Partners"));
 const Contact = lazy(() => import("./pages/Contact"));
 
 const queryClient = new QueryClient();
@@ -37,13 +34,10 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
-              <Route path="/platforms" element={<Platforms />} />
-              <Route path="/platforms/:slug" element={<PlatformDetail />} />
+              <Route path="/investment" element={<Investment />} />
               <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/portfolio/:slug" element={<SubsidiaryDetail />} />
-              <Route path="/impact" element={<Impact />} />
+              <Route path="/leadership" element={<Leadership />} />
               <Route path="/insights" element={<Insights />} />
-              <Route path="/partners" element={<Partners />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
