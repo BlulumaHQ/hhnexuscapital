@@ -20,22 +20,22 @@ const HeroSection = () => {
             {t("HH Nexus Capital", "衡寰資本")}
           </p>
           <p className="label-uppercase mb-6">
-            {t("Global Investment & Strategic Platform", "全球投資與戰略平台")}
+            {t("Family Office & Cultural Capital Platform", "家族辦公室與文化資本平台")}
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-primary-foreground leading-[1.1] tracking-tight mb-8">
             {lang === "en" ? (
               <>
                 Connecting Capital,
                 <br />
-                Innovation and
+                Culture, and
                 <br />
-                <span className="text-secondary">Culture</span>
+                <span className="text-secondary">Long-Term Value</span>
               </>
             ) : (
               <>
-                連結資本、創新
+                連結資本、文化
                 <br />
-                與<span className="text-secondary">文化</span>
+                與<span className="text-secondary">長期價值</span>
               </>
             )}
           </h1>
@@ -51,7 +51,7 @@ const HeroSection = () => {
               to="/investment"
               className="inline-flex items-center justify-center px-8 py-3.5 border border-primary-foreground/20 text-primary-foreground/80 text-sm font-medium tracking-wide hover:border-secondary hover:text-secondary transition-colors"
             >
-              {t("Investment Thesis", "投資理念")}
+              {t("Capital Philosophy", "資本理念")}
             </Link>
           </div>
         </div>
