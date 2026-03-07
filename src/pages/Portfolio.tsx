@@ -1,50 +1,62 @@
-import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import heroImage from "@/assets/hero-skyline.jpg";
-import hsinhsinLogo from "@/assets/brands/hsinhsin_logo.jpg";
-import hsinFramingLogo from "@/assets/brands/hsin_framing_logo.jpg";
-import cambridgeArtLogo from "@/assets/brands/cambridge_art_logo.jpg";
-import hsinEventLogo from "@/assets/brands/hsin_hsin_event_logo.jpg";
-import blulumaLogo from "@/assets/brands/bluluma_logo.png";
 
-const brands = [
+const portfolioCompanies = [
   {
-    name: "Hsin Framing & Moulding",
-    nameCn: "欣欣畫框",
-    description: "Premium custom framing and art presentation services trusted by collectors and designers since 1995.",
-    descriptionCn: "自1995年起深受收藏家和設計師信賴的高級訂製畫框與藝術展示服務。",
-    logo: hsinFramingLogo,
+    name: "Aurora AI Systems",
+    sector: "AI Infrastructure",
+    sectorCn: "AI 基礎設施",
+    stage: "Series B",
+    year: "2024",
+    description: "Aurora AI Systems is building the foundational infrastructure for enterprise artificial intelligence. Their platform enables organizations to deploy, manage, and scale AI models across complex operational environments. With proprietary technology for model optimization and real-time inference, Aurora serves Fortune 500 companies across healthcare, finance, and manufacturing.",
+    descriptionCn: "Aurora AI Systems 正在構建企業人工智能的基礎設施。他們的平台使組織能夠在複雜的營運環境中部署、管理和擴展 AI 模型。憑藉模型優化和即時推理的專有技術，Aurora 為醫療保健、金融和製造業的財富500強公司提供服務。",
   },
   {
-    name: "Cambridge Art Center",
-    nameCn: "劍橋藝術教育中心",
-    description: "Educational workshops and creative mentorship programs supporting artistic development and cultural preservation.",
-    descriptionCn: "支持藝術發展與文化傳承的教育工作坊與創意導師計畫。",
-    logo: cambridgeArtLogo,
+    name: "Nova Consumer Labs",
+    sector: "Consumer Innovation",
+    sectorCn: "消費創新",
+    stage: "Series A",
+    year: "2023",
+    description: "Nova Consumer Labs develops next-generation lifestyle brands built on community engagement and digital-first distribution. Their portfolio of brands spans wellness, sustainable fashion, and premium home goods, each leveraging proprietary community platforms to drive organic growth and deep consumer loyalty.",
+    descriptionCn: "Nova Consumer Labs 開發建立在社群參與和數位優先分銷基礎上的新世代生活方式品牌。他們的品牌組合涵蓋健康、永續時尚和高端家居用品，每個品牌都利用專有社群平台推動有機增長和深度消費者忠誠。",
   },
   {
-    name: "Hsin PR & Events",
-    nameCn: "欣欣向榮活動策劃與公關公司",
-    description: "Professional event planning, media relations, and brand activation services.",
-    descriptionCn: "專業活動策劃、媒體關係與品牌推廣服務。",
-    logo: hsinEventLogo,
+    name: "Atlas Media Network",
+    sector: "Digital Media",
+    sectorCn: "數位媒體",
+    stage: "Series B",
+    year: "2024",
+    description: "Atlas Media Network operates a global digital media platform connecting independent content creators with premium distribution channels. Their technology stack enables creators to produce, distribute, and monetize content across 40+ markets while maintaining creative independence and audience ownership.",
+    descriptionCn: "Atlas Media Network 運營全球數位媒體平台，將獨立內容創作者與優質分銷渠道連接起來。他們的技術平台使創作者能夠在40多個市場中製作、分發和變現內容，同時保持創意獨立性和受眾所有權。",
   },
   {
-    name: "La Petite Elli Coffee & Tea Boutique",
-    nameCn: "La Petite Elli 咖啡茶精品",
-    description: "A curated boutique focused on specialty coffee, tea, and lifestyle experiences.",
-    descriptionCn: "專注於精品咖啡、茶與生活體驗的精選店。",
-    logo: null,
+    name: "Cultura Studios",
+    sector: "Creative Economy",
+    sectorCn: "創意經濟",
+    stage: "Seed",
+    year: "2025",
+    description: "Cultura Studios is a creative economy platform enabling artists, designers, and cultural institutions to build sustainable digital businesses. Their marketplace connects cultural producers with global audiences through curated experiences, digital exhibitions, and collaborative creation tools.",
+    descriptionCn: "Cultura Studios 是一個創意經濟平台，幫助藝術家、設計師和文化機構建立可持續的數位業務。他們的市場通過策展體驗、數位展覽和協作創作工具將文化生產者與全球受眾連接起來。",
   },
   {
-    name: "Bluluma Design",
-    nameCn: "Bluluma 設計工作室",
-    description: "Brand strategy, web design, and creative development for modern businesses.",
-    descriptionCn: "為現代企業提供品牌策略、網站設計與創意開發服務。",
-    logo: blulumaLogo,
-    url: "https://www.bluluma.com",
+    name: "Pacific Robotics",
+    sector: "Automation Technology",
+    sectorCn: "自動化科技",
+    stage: "Series A",
+    year: "2023",
+    description: "Pacific Robotics develops intelligent automation systems for logistics, warehousing, and manufacturing environments. Their adaptive robotics platform combines computer vision, reinforcement learning, and modular hardware to deliver flexible automation solutions that reduce operational costs by up to 60%.",
+    descriptionCn: "Pacific Robotics 為物流、倉儲和製造環境開發智能自動化系統。他們的自適應機器人平台結合電腦視覺、強化學習和模組化硬體，提供靈活的自動化解決方案，可將營運成本降低高達60%。",
+  },
+  {
+    name: "Urban Nexus Platform",
+    sector: "Strategic Platforms",
+    sectorCn: "戰略平台",
+    stage: "Pre-Seed",
+    year: "2025",
+    description: "Urban Nexus Platform is building a smart city collaboration network that connects municipal governments, infrastructure developers, and technology providers. Their platform enables data-driven urban planning, public-private partnership facilitation, and cross-city knowledge sharing for sustainable urban development.",
+    descriptionCn: "Urban Nexus Platform 正在構建智慧城市協作網絡，連接市政府、基礎設施開發商和技術提供商。他們的平台實現數據驅動的城市規劃、公私合作促進以及可持續城市發展的跨城市知識共享。",
   },
 ];
 
@@ -57,139 +69,67 @@ const Portfolio = () => {
       <main>
         <section className="bg-primary pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-primary/80" />
           <div className="section-container relative z-10">
             <div className="gold-line mb-6" />
-            <p className="label-uppercase mb-4">{t("Portfolio / Subsidiaries", "旗下事業")}</p>
+            <p className="label-uppercase mb-4">{t("Portfolio", "投資組合")}</p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-foreground tracking-tight leading-[1.1] max-w-3xl">
               {lang === "en" ? (
-                <>Strategic Investments & <span className="text-secondary">Holdings</span></>
+                <>Our <span className="text-secondary">Companies</span></>
               ) : (
-                <>策略性投資與<span className="text-secondary">控股事業</span></>
+                <>我們的<span className="text-secondary">投資企業</span></>
               )}
             </h1>
             <p className="text-primary-foreground/60 text-base md:text-lg leading-relaxed mt-6 max-w-2xl">
-              {lang === "en"
-                ? "Our holding structure connects strategic platforms with operating assets."
-                : "我們以控股架構串聯平台型業務與營運型資產群。"}
+              {t(
+                "We invest in visionary founders building transformative companies across AI, consumer innovation, creative economy, and strategic platforms.",
+                "我們投資於在 AI、消費創新、創意經濟和策略平台領域建立變革性公司的有遠見創業者。"
+              )}
             </p>
           </div>
         </section>
 
-        {/* Operating Assets */}
+        {/* Logo Grid */}
         <section className="section-padding bg-background">
           <div className="section-container">
-            <div className="mb-16">
-              <div className="gold-line mb-4" />
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
-                {t("Operating Assets", "營運資產")}
-              </h2>
-              <div className="grid grid-cols-1 gap-6">
-                <Link
-                  to="/portfolio/hsin-hsin-holdings"
-                  className="block p-8 md:p-12 bg-card border border-border hover:border-secondary/30 transition-colors group"
-                >
-                  <div className="flex items-start gap-6">
-                    <img src={hsinhsinLogo} alt="HSIN HSIN HOLDINGS" className="w-20 h-20 object-contain flex-shrink-0 hidden md:block" />
-                    <div>
-                      <p className="text-xs text-muted-foreground tracking-[0.15em] uppercase mb-3 font-body">
-                        {t("Founded in Vancouver, 1995", "創立於溫哥華，1995年")}
-                      </p>
-                      <h3 className="font-display text-2xl md:text-3xl font-semibold text-primary group-hover:text-secondary transition-colors mb-3">
-                        HSIN HSIN HOLDINGS LTD.
-                      </h3>
-                      <p className="body-large max-w-2xl mb-4">
-                        {lang === "en"
-                          ? "Founded in Vancouver in 1995, HSIN HSIN HOLDINGS LTD. is a diversified business group spanning art craftsmanship, education, retail lifestyle, branding and design, and coffee and tea experiences."
-                          : "欣欣控股自 1995 年成立於溫哥華，事業涵蓋工藝美學與藝術裝裱、文化教育、生活選品零售、品牌設計與行銷整合，以及咖啡茶與健康食材體驗。"}
-                      </p>
-                      <p className="body-large max-w-2xl">
-                        {lang === "en"
-                          ? "The group connects products, services, and cultural programming into a practical ecosystem for sustainable growth."
-                          : "串聯商品、服務與文化內容，形成可持續成長的實務型生態系。"}
-                      </p>
-                      <span className="inline-block mt-6 text-secondary text-sm font-body tracking-wide">
-                        {t("View Details →", "查看詳情 →")}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            {/* Group Brands */}
-            <div className="mb-16">
-              <div className="gold-line mb-4" />
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
-                {t("Group Brands", "集團品牌")}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {brands.map((brand) => (
-                  <div
-                    key={brand.name}
-                    className="p-8 bg-card border border-border hover:border-secondary/20 transition-colors flex flex-col"
-                  >
-                    <div className="h-24 mb-6 flex items-center">
-                      {brand.logo ? (
-                        brand.url ? (
-                          <a href={brand.url} target="_blank" rel="noopener noreferrer">
-                            <img src={brand.logo} alt={brand.name} className="h-20 w-auto object-contain" />
-                          </a>
-                        ) : (
-                          <img src={brand.logo} alt={brand.name} className="h-20 w-auto object-contain" />
-                        )
-                      ) : (
-                        <div className="h-20 w-20 border border-border flex items-center justify-center">
-                          <span className="text-secondary text-2xl font-display font-semibold">
-                            {brand.name.charAt(0)}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                    <h3 className="font-display text-lg font-semibold text-primary mb-3">
-                      {lang === "en" ? brand.name : brand.nameCn}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed font-body flex-1">
-                      {lang === "en" ? brand.description : brand.descriptionCn}
-                    </p>
-                    {brand.url && (
-                      <a href={brand.url} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-secondary text-sm font-body tracking-wide hover:underline">
-                        {brand.url.replace("https://www.", "")} →
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Urban Platforms */}
-            <div>
-              <div className="gold-line mb-4" />
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-primary mb-8">
-                {t("Urban Platforms", "城市平台")}
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { name: "Urban Strategic Forum Platform", nameCn: "城市戰略論壇平台", slug: "urban-strategic-forum" },
-                  { name: "Public-Private Strategy & Advisory", nameCn: "公私合作策略顧問", slug: "public-private-advisory" },
-                  { name: "International Cultural IP Platform", nameCn: "國際文化 IP 平台", slug: "cultural-ip" },
-                  { name: "Nexus Global Forum", nameCn: "Nexus 全球論壇", slug: "nexus-global-forum" },
-                  { name: "Industry & Capital Connection Platform", nameCn: "產業與資本連結平台", slug: "industry-capital" },
-                ].map((item) => (
-                  <Link
-                    key={item.slug}
-                    to={`/platforms/${item.slug}`}
-                    className="block p-8 bg-card border border-border hover:border-secondary/30 transition-colors group"
-                  >
-                    <h3 className="font-display text-lg font-semibold text-primary group-hover:text-secondary transition-colors">
-                      {lang === "en" ? item.name : item.nameCn}
-                    </h3>
-                    <span className="inline-block mt-4 text-secondary text-sm font-body tracking-wide">
-                      {t("View Platform →", "查看平台 →")}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+              {portfolioCompanies.map((c) => (
+                <div key={c.name} className="p-8 bg-card border border-border hover:border-secondary/20 transition-colors text-center">
+                  <div className="h-16 mb-4 flex items-center justify-center">
+                    <span className="text-secondary text-3xl font-display font-bold">
+                      {c.name.split(" ").map(w => w[0]).join("")}
                     </span>
-                  </Link>
-                ))}
-              </div>
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-primary mb-1">{c.name}</h3>
+                  <p className="text-xs text-secondary font-body tracking-wide mb-1">
+                    {lang === "en" ? c.sector : c.sectorCn}
+                  </p>
+                  <p className="text-xs text-muted-foreground font-body">{c.stage} · {c.year}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Detailed Cards */}
+            <div className="space-y-8">
+              {portfolioCompanies.map((c) => (
+                <div key={c.name} className="p-8 md:p-10 bg-card border border-border">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+                    <div>
+                      <h3 className="font-display text-xl md:text-2xl font-semibold text-primary">{c.name}</h3>
+                      <p className="text-secondary text-sm font-body tracking-wide">
+                        {lang === "en" ? c.sector : c.sectorCn}
+                      </p>
+                    </div>
+                    <div className="flex gap-4">
+                      <span className="text-xs text-muted-foreground font-body border border-border px-3 py-1">{c.stage}</span>
+                      <span className="text-xs text-muted-foreground font-body border border-border px-3 py-1">{c.year}</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-body">
+                    {lang === "en" ? c.description : c.descriptionCn}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
