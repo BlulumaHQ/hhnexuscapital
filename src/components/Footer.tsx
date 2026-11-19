@@ -72,7 +72,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/40 text-xs tracking-wide font-body">
             © {new Date().getFullYear()} HH Nexus Capital Ltd. {t("All rights reserved.", "版權所有。")}
-          </p>
+          {" "}<span className="block mt-1 opacity-80" data-concept-note>Design concept for portfolio purposes only. Not the official website of HH Nexus Capital Ltd.</span></p>
           <div className="flex gap-6">
             <Link to="/privacy" className="text-primary-foreground/40 hover:text-secondary text-xs tracking-wide transition-colors font-body">
               {t("Privacy Policy", "隱私政策")}
